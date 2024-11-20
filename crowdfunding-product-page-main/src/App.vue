@@ -359,4 +359,21 @@ nav ul li {
   border-radius:8px;
   padding: 20px;
 }
+.titles h2{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+}
+.titles p{
+  font-size: 1rem;
+  font-weight: 500;
+  color:hsl(176, 50%, 47%);
+  margin: 20px 0 0 0;
+}
+.actions button{
+  background: hsl(176, 72%, 28%);
+  color: #ffffff;
+  padding: 10px;
+  font-weight: 500;
+}
 </style>
