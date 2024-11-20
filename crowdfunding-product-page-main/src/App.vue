@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-slate-700 min-h-screen m-0  text-white">
     About
   Discover
   Get Started

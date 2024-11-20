@@ -2,10 +2,15 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",  // Add this line to include Vue files
+    "./src/**/*.{vue,js,ts,jsx,tsx}" ,
+    "./node_modules/flowbite/**/*.js",
   ],
+  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [
+    require('flowbite/plugin'),
+  ],
+};
+
