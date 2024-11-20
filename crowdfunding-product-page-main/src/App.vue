@@ -43,11 +43,13 @@
           <div class="number">$89,914</div>
           <div class="detail">of $100,000 backed</div>
         </div>
+        <div class="rectangle h-16 w-0.5 bg-[#ccc] rounded-3xl mt-8"></div>
 
         <div class="fact2">
           <div class="number">5,007</div>
           <div class="detail">total backers</div>
         </div>
+        <div class="rectangle h-16 w-0.5 bg-[#ccc] rounded-3xl mt-8"></div>
         <div class="fact3">
           <div class="number">56</div>
           <div class="detail">days left</div>
@@ -231,5 +233,25 @@ nav ul li {
   align-items: center;
   text-align: center;
   font-size: 16px;
+}
+.facts{
+  display: flex;
+  gap: 80px;
+  padding: 20px;
+}
+.fact1, .fact2, .fact3 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+}
+.fact1 .number, .fact2 .number, .fact3 .number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6e8098;
+}
+.fact1 .detail, .fact2 .detail, .fact3 .detail {
+  font-size: 1rem;
+  color: #6e8098;
 }
 </style>
