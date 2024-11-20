@@ -71,7 +71,7 @@
       your monitor at eye level has the potential to improve your posture and make you
       more comfortable while at work, helping you stay focused on the task at hand.
       </p>
-       <p class="text-left p-4 bg-red-500 w-full">
+       <p class="text-left p-4">
         Featuring artisan craftsmanship, the simplicity of design creates extra desk space
       below your computer to allow notepads, pens, and USB sticks to be stored under the
       stand.
@@ -286,5 +286,11 @@ nav ul li {
   font-weight: 700;
   color: hsl(0, 0%, 0%);
   margin: 20px 0 0 0;
+}
+.about p{
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 48%);
+  margin: 10px 0 0 0;
 }
 </style>
