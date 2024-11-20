@@ -114,12 +114,12 @@
           <h2>64</h2>
           <p>left</p>
         </div>
-        <button>
+        <button class="rounded-3xl w-36 h-12 mt-5">
           Select Reward
         </button>
       </div>
     </div>
-    <div class="pledge3">
+    <div class="pledge3 backdrop-blur-xl">
       <div class="titles flex flex-row justify-between">
         <h2>Mahogany Special Edition</h2>
         <p>Pledge $200 or more </p>
@@ -135,9 +135,12 @@
           <h2>0</h2>
           <p>left</p>
         </div>
-        <button>
-          Out of stock
-        </button>
+        <div class="out-of-stock">
+          <button class="bg-gray-500 rounded-3xl w-36 h-12 mt-5">
+            Out of stock
+          </button>
+        </div>
+        
       </div>
     </div>
 
@@ -399,5 +402,11 @@ nav ul li {
   font-weight: 500;
   color:hsl(0, 0%, 48%);
   margin: 35px 0 0 10px;
+}
+.out-of-stock button{
+  background: #ccc;
+  color: #ffffff;
+  padding: 10px;
+  font-weight: 500;
 }
 </style>
