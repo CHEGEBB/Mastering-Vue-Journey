@@ -1,13 +1,14 @@
 <template>
   <div class=" min-h-screen m-0  text-white">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-    About
-  Discover
-  Get Started
+    <div class="header">
+      <nav>
+        <ul>
+          <li>About</li>
+          <li>Discover</li>
+          <li>Get Started</li>
+        </ul>
+      </nav>
+    </div>
 
   Mastercraft Bamboo Monitor Riser
   A beautiful & handcrafted monitor stand to reduce neck and eye strain.
@@ -110,6 +111,9 @@
 
 export default {
   name: 'App',
+  data(){
+    url: "./assets/images/image-hero-desktop.jpg"
+  },
   components: {
   }
 }
@@ -125,18 +129,7 @@ export default {
   margin-top: 60px;
 }
 body{
-  background: red;
-}
-nav {
-  padding: 30px;
+  background:white;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
