@@ -38,6 +38,7 @@
         </div>
       </div>
 
+      <div class="fact-section">
       <div class="facts h-48 flex flex-row">
         <div class="fact1">
           <div class="number">$89,914</div>
@@ -55,6 +56,13 @@
           <div class="detail">days left</div>
         </div>
       </div>
+      <div class="progressbar">
+        <div class="progress w-[80%] bg-[#ccc] h-2">
+          <div class="progress-bar bg-cyan-300 h-2 w-[80%] rounded-3xl"></div>
+        </div>
+
+      </div>
+    </div>
 
       About this project The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
       platform that elevates your screen to a more comfortable viewing height. Placing
@@ -189,7 +197,7 @@ nav ul li {
   width: 50%;
   margin-top: -100px;
 }
-.content .facts {
+.content .fact-section {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
