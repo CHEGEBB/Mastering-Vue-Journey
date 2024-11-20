@@ -1,6 +1,8 @@
 <template>
-  <div class=" min-h-screen m-0  text-white">
-    <div class="header">
+  <div class=" min-h-screen m-0 ">
+    <div class="header mt-0 w-full">
+      <div class="header-image w-full h-10">
+        <img :src="url" alt="header image" />
       <nav>
         <ul>
           <li>About</li>
@@ -8,6 +10,7 @@
           <li>Get Started</li>
         </ul>
       </nav>
+    </div>
     </div>
 
   Mastercraft Bamboo Monitor Riser
@@ -107,12 +110,14 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 
 export default {
   name: 'App',
   data(){
-    url: "./assets/images/image-hero-desktop.jpg"
+    return{
+      url: require("@/assets/images/image-hero-desktop.jpg")
+    }
   },
   components: {
   }
@@ -126,10 +131,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.header{
+  height: 400px;
+  width: 100%;
 }
 body{
-  background:white;
+  background:red;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 </style>
