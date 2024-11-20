@@ -12,101 +12,110 @@
         </ul>
       </nav>
     </div>
- 
 
-  Mastercraft Bamboo Monitor Riser
-  A beautiful & handcrafted monitor stand to reduce neck and eye strain.
+    <div class="content">
 
-  Back this project
-  Bookmark
+      <div class="master">
+        <div class="logo-con">
+          <img :src="logoCon" alt="logo">
+        </div>
 
-  $89,914 of $100,000 backed
-  5,007 total backers
-  56 days left
+      Mastercraft Bamboo Monitor Riser
+      A beautiful & handcrafted monitor stand to reduce neck and eye strain.
 
-  About this project
+      Back this project
+      Bookmark
+    </div>
 
-  The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
-  to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
-  your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
+      $89,914 of $100,000 backed
+      5,007 total backers
+      56 days left
 
-  Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
-  to allow notepads, pens, and USB sticks to be stored under the stand.
-  
-  Bamboo Stand
-  Pledge $25 or more
-  You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
-  you’ll be added to a special Backer member list.
-  101 left
-  Select Reward
+      About this project
 
-  Black Edition Stand
-  Pledge $75 or more
-  You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
-  member list. Shipping is included.
-  64 left
-  Select Reward
+      The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen
+      to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve
+      your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
 
-  Mahogany Special Edition
-  Pledge $200 or more
-  You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
-  to our Backer member list. Shipping is included.
-  0 left
-  Out of Stock
+      Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer
+      to allow notepads, pens, and USB sticks to be stored under the stand.
 
-  <!-- Selection modal start -->
+      Bamboo Stand
+      Pledge $25 or more
+      You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
+      you’ll be added to a special Backer member list.
+      101 left
+      Select Reward
 
-  Back this project
-  Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+      Black Edition Stand
+      Pledge $75 or more
+      You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
+      member list. Shipping is included.
+      64 left
+      Select Reward
 
-  Pledge with no reward
-  Choose to support us without a reward if you simply believe in our project. As a backer, 
-  you will be signed up to receive product updates via email.
+      Mahogany Special Edition
+      Pledge $200 or more
+      You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
+      to our Backer member list. Shipping is included.
+      0 left
+      Out of Stock
 
-  Bamboo Stand
-  Pledge $25 or more
-  You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
-  you’ll be added to a special Backer member list.
-  101 left
+      <!-- Selection modal start -->
 
-  <!-- Selected pledge start -->
-  Enter your pledge
-  $25
-  Continue
-  <!-- Selected pledge end -->
+      Back this project
+      Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
 
-  Black Edition Stand
-  Pledge $75 or more
-  You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
-  member list. Shipping is included.
-  64 left
+      Pledge with no reward
+      Choose to support us without a reward if you simply believe in our project. As a backer,
+      you will be signed up to receive product updates via email.
 
-  <!-- Selected pledge start -->
-  Enter your pledge
-  $75
-  Continue
-  <!-- Selected pledge end -->
+      Bamboo Stand
+      Pledge $25 or more
+      You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
+      you’ll be added to a special Backer member list.
+      101 left
 
-  Mahogany Special Edition
-  Pledge $200 or more
-  You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
-  to our Backer member list. Shipping is included.
-  0 left
+      <!-- Selected pledge start -->
+      Enter your pledge
+      $25
+      Continue
+      <!-- Selected pledge end -->
 
-  <!-- Selected pledge  start -->
-  Enter your pledge
-  $200
-  Continue
-  <!-- Selected pledge end -->
+      Black Edition Stand
+      Pledge $75 or more
+      You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
+      member list. Shipping is included.
+      64 left
 
-  <!-- Selection modal end -->
+      <!-- Selected pledge start -->
+      Enter your pledge
+      $75
+      Continue
+      <!-- Selected pledge end -->
 
-  <!-- Success modal start -->
+      Mahogany Special Edition
+      Pledge $200 or more
+      You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
+      to our Backer member list. Shipping is included.
+      0 left
 
-  Thanks for your support!
-  Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-  an email once our campaign is completed.
-  Got it!
+    </div>
+
+    <!-- Selected pledge  start -->
+    Enter your pledge
+    $200
+    Continue
+    <!-- Selected pledge end -->
+
+    <!-- Selection modal end -->
+
+    <!-- Success modal start -->
+
+    Thanks for your support!
+    Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+    an email once our campaign is completed.
+    Got it!
 
   </div>
 </template>
@@ -115,9 +124,10 @@
 
 export default {
   name: 'App',
-  data(){
-    return{
-      url: require("@/assets/images/image-hero-desktop.jpg")
+  data() {
+    return {
+      url: require("@/assets/images/image-hero-desktop.jpg"),
+      logoCon: require("@/assets/images/logo-mastercraft.svg"),
     }
   },
   components: {
@@ -127,6 +137,7 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
+
 #app {
   font-family: 'Commissioner', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -134,40 +145,66 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-.header{
+
+.header {
   background: url('./assets/images/image-hero-desktop.jpg');
-  background-size:contain;
+  background-size: contain;
   background-repeat: no-repeat;
 }
-body{
-  background:red;
+
+body {
+  background: white;
 }
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-nav{
-  display:flex;
+
+nav {
+  display: flex;
 
 
 }
-nav ul{
-  display:flex;
-  justify-content:space-between;
-  list-style:none;
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
   margin: 10px 0 0 45px;
 }
-nav ul li{
-  margin-right:20px;
+
+nav ul li {
+  margin-right: 20px;
   font-weight: 500;
   color: #ffffff;
 
 }
-.logo p{
-  font-size:2rem;
-  font-weight:700;
+
+.logo p {
+  font-size: 2rem;
+  font-weight: 700;
   color: #ffffff;
   margin: 10px 0 0 45px;
+}
+.content .master{
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 0 auto;
+  width: 50%;
+  margin-top: -100px;
+}
+.master .logo-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -45px 0 0 0;
+}
+.master .logo-con img {
+  width: 50px;
+  height: 50px;
 }
 </style>
