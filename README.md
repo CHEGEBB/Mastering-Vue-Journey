@@ -75,6 +75,4 @@ Big thanks to:
 ## Contact Me 📫  
 I’m always looking for opportunities to grow and collaborate. Connect with me:  
 - GitHub: [CHEGEBB](https://github.com/CHEGEBB)  
-- Email: [your-email@example.com]  
-
 ```
