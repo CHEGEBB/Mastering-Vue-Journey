@@ -63,7 +63,7 @@
 
       </div>
     </div>
-    <div class="about ">
+    <div class="about">
       <h2 class="text-left p-4 ">About this project</h2>
       <p class="text-left p-4">
         The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
@@ -77,7 +77,7 @@
       stand.
        </p>
 
-      <div class="pledgesflex flex-col">
+      <div class="pledges flex flex-col">
         <div class="pledge1">
       
       Bamboo Stand Pledge $25 or more You get an ergonomic stand made of natural
