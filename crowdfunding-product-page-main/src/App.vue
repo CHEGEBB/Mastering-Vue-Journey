@@ -40,10 +40,21 @@
      
     </div>
 
-    <div class="facts">
-      $89,914 of $100,000 backed
-      5,007 total backers
-      56 days left 
+    <div class="facts h-48 flex flex-row">
+      <div class="fact1">
+        $89,914
+      of $100,000 backed
+      </div>
+      
+      <div class="fact2">
+        5,007
+        total backers
+      </div>
+      <div class="fact3">
+        56
+      days left 
+      </div>
+      
     </div>
 
      
