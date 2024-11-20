@@ -136,6 +136,8 @@ export default {
 }
 .header{
   background: url('./assets/images/image-hero-desktop.jpg');
+  background-size:contain;
+  background-repeat: no-repeat;
 }
 body{
   background:red;
