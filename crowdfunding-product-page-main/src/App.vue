@@ -22,12 +22,17 @@
         <h1 class="text-2xl font-bold text-black">Mastercraft Bamboo Monitor Riser</h1>
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 
-        <div>
-          <button>
+        <div class="buttons flex flex-row">
+          <button class="bg-emerald-500 p-3 rounded-3xl text-white w-48">
             Back this project
           </button>
-          <button>
-            Bookmark
+          <button class="mark flex flex-row ">
+            <span>
+              <img :src="bookmark" alt="bookmark">
+            </span>
+            <div class="text-block">
+              Bookmark
+            </div>
 
           </button>
         </div>
@@ -136,6 +141,7 @@ export default {
     return {
       url: require("@/assets/images/image-hero-desktop.jpg"),
       logoCon: require("@/assets/images/logo-mastercraft.svg"),
+      bookmark: require("@/assets/images/icon-bookmark.svg"),
     }
   },
   components: {
@@ -220,5 +226,8 @@ nav ul li {
 .master .logo-con img {
   width: 50px;
   height: 50px;
+}
+.buttons .mark{
+  
 }
 </style>
