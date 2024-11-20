@@ -94,7 +94,7 @@
               <h2>101</h2>
               <p>left</p>
             </div>
-            <button>
+            <button class="rounded-3xl w-36 h-12 mt-5">
               Select Reward
             </button>
           </div>
@@ -352,28 +352,52 @@ nav ul li {
   font-weight: 500;
   color: hsl(0, 0%, 48%);
   margin: 10px 0 0 0;
+  width: 100%;
+
 }
 .pledge1, .pledge2, .pledge3 {
-  margin-top: 20px;
   border: 2px solid #ccc;
   border-radius:8px;
   padding: 20px;
+  width: 93%;
+  margin: 20px auto;
+
+}
+.titles{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
 }
 .titles h2{
   font-size: 1.2rem;
   font-weight: 700;
   color: hsl(0, 0%, 0%);
+  width: 70%;
+  text-align: left;
 }
 .titles p{
   font-size: 1rem;
   font-weight: 500;
   color:hsl(176, 50%, 47%);
   margin: 20px 0 0 0;
+  text-align: right;
 }
 .actions button{
   background: hsl(176, 72%, 28%);
   color: #ffffff;
   padding: 10px;
   font-weight: 500;
+}
+.no-left h2{
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+}
+.no-left p{
+  font-size: 1rem;
+  font-weight: 500;
+  color:hsl(0, 0%, 48%);
+  margin: 35px 0 0 10px;
 }
 </style>
