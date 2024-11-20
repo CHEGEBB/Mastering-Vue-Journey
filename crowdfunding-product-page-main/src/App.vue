@@ -57,8 +57,8 @@
         </div>
       </div>
       <div class="progressbar">
-        <div class="progress w-[80%] bg-[#ccc] h-2">
-          <div class="progress-bar bg-cyan-300 h-2 w-[80%] rounded-3xl"></div>
+        <div class="progress w-[90%] bg-[#ccc] h-3 rounded-3xl mx-6 -mt-9">
+          <div class="progress-bar bg-[#3CB4AC] h-3 w-[84%] rounded-3xl"></div>
         </div>
 
       </div>
