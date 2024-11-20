@@ -119,7 +119,8 @@
         </button>
       </div>
     </div>
-    <div class="pledge3 backdrop-blur-xl">
+    <div class="pledge3 ">
+      <div class="overlay"></div>
       <div class="titles flex flex-row justify-between">
         <h2>Mahogany Special Edition</h2>
         <p>Pledge $200 or more </p>
@@ -359,7 +360,7 @@ nav ul li {
 
 }
 .pledge1, .pledge2, .pledge3 {
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   border-radius:8px;
   padding: 20px;
   width: 93%;
@@ -408,5 +409,11 @@ nav ul li {
   color: #ffffff;
   padding: 10px;
   font-weight: 500;
+}
+.overlay{
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  border-radius: 8px;
+  
 }
 </style>
