@@ -63,14 +63,23 @@
 
       </div>
     </div>
-
-      About this project The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+    <div class="about">
+      <h2 class="text-left">About this project</h2>
+      <p class="text-left">
+        The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
       platform that elevates your screen to a more comfortable viewing height. Placing
       your monitor at eye level has the potential to improve your posture and make you
       more comfortable while at work, helping you stay focused on the task at hand.
-      Featuring artisan craftsmanship, the simplicity of design creates extra desk space
+      </p>
+       <p class="text-left">
+        Featuring artisan craftsmanship, the simplicity of design creates extra desk space
       below your computer to allow notepads, pens, and USB sticks to be stored under the
-      stand. Bamboo Stand Pledge $25 or more You get an ergonomic stand made of natural
+      stand.
+       </p>
+
+      
+      
+      Bamboo Stand Pledge $25 or more You get an ergonomic stand made of natural
       bamboo. You've helped us launch our promotional campaign, and you’ll be added to a
       special Backer member list. 101 left Select Reward Black Edition Stand Pledge $75 or
       more You get a Black Special Edition computer stand and a personal thank you. You’ll
@@ -103,6 +112,7 @@
       Mahogany Special Edition Pledge $200 or more You get two Special Edition Mahogany
       stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer
       member list. Shipping is included. 0 left
+    </div>
     </div>
 
     <!-- Selected pledge  start -->
@@ -198,6 +208,14 @@ nav ul li {
   margin-top: -100px;
 }
 .content .fact-section {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 auto;
+  width: 50%;
+}
+.content .about {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
