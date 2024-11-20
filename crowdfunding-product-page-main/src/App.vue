@@ -1,10 +1,10 @@
 <template>
-  <div class=" min-h-screen m-0 ">
-    <div class="header mt-0 w-full h-96 flex-row flex justify-between p-24 pt-4 text-white ">
+  <div class=" min-h-screen m-0">
+    <div class="header mt-0 w-full h-96 flex-row flex justify-between p-24 pt-4">
       <div class="logo">
         <p>crowdfund</p>
       </div>
-      <nav>
+      <nav class="mt-6">
         <ul>
           <li>About</li>
           <li>Discover</li>
@@ -12,6 +12,7 @@
         </ul>
       </nav>
     </div>
+ 
 
   Mastercraft Bamboo Monitor Riser
   A beautiful & handcrafted monitor stand to reduce neck and eye strain.
@@ -125,15 +126,16 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Commissioner', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 .header{
-  background: url('./assets/images/image-hero-desktop.jpg') no-repeat center center/cover;
+  background: url('./assets/images/image-hero-desktop.jpg');
 }
 body{
   background:red;
@@ -142,5 +144,28 @@ body{
   margin:0;
   padding:0;
   box-sizing:border-box;
+}
+nav{
+  display:flex;
+
+
+}
+nav ul{
+  display:flex;
+  justify-content:space-between;
+  list-style:none;
+  margin: 10px 0 0 45px;
+}
+nav ul li{
+  margin-right:20px;
+  font-weight: 500;
+  color: #ffffff;
+
+}
+.logo p{
+  font-size:2rem;
+  font-weight:700;
+  color: #ffffff;
+  margin: 10px 0 0 45px;
 }
 </style>
