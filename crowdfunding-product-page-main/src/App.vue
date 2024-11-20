@@ -100,16 +100,45 @@
           </div>
     </div>
     <div class="pledge2">
-      
-      Black Edition Stand Pledge $75 or
-      more You get a Black Special Edition computer stand and a personal thank you. You’ll
-      be added to our Backer member list. Shipping is included. 64 left Select Reward
+      <div class="titles flex flex-row justify-between">
+        <h2>Black Edition Stand</h2>
+        <p>Pledge $75 or more </p>
+      </div>
+      <div class="content-text">
+        <p class="text-left"> You get a Black Special Edition computer stand and a personal
+          thank you. You’ll be added to our Backer member list. Shipping is included.
+        </p>
+      </div>
+      <div class="actions flex flex-row justify-between">
+        <div class="no-left flex flex-row">
+          <h2>64</h2>
+          <p>left</p>
+        </div>
+        <button>
+          Select Reward
+        </button>
+      </div>
     </div>
     <div class="pledge3">
-
-      Mahogany Special Edition Pledge $200 or more You get two Special Edition Mahogany
-      stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer
-      member list. Shipping is included. 0 left Out of Stock
+      <div class="titles flex flex-row justify-between">
+        <h2>Mahogany Special Edition</h2>
+        <p>Pledge $200 or more </p>
+      </div>
+      <div class="content-text">
+        <p class="text-left"> You get two Special Edition Mahogany stands, a Backer T-Shirt,
+          and a personal thank you. You’ll be added to our Backer member list. Shipping is
+          included.
+        </p>
+      </div>
+      <div class="actions flex flex-row justify-between">
+        <div class="no-left flex flex-row">
+          <h2>0</h2>
+          <p>left</p>
+        </div>
+        <button>
+          Out of stock
+        </button>
+      </div>
     </div>
 
       <!-- Selection modal start -->
