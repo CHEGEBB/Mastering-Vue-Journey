@@ -384,7 +384,7 @@ nav ul li {
   text-align: right;
 }
 .actions button{
-  background: hsl(176, 72%, 28%);
+  background:hsl(176, 50%, 47%);
   color: #ffffff;
   padding: 10px;
   font-weight: 500;
