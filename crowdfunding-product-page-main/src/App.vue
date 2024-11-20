@@ -15,23 +15,23 @@
 
     <div class="content">
 
-      <div class="master">
+      <div class="master h-60">
         <div class="logo-con">
           <img :src="logoCon" alt="logo">
         </div>
-        <h1 class="text-2xl font-bold text-black">Mastercraft Bamboo Monitor Riser</h1>
+        <h1 class="text-2xl font-bold text-black mt-6">Mastercraft Bamboo Monitor Riser</h1>
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 
-        <div class="buttons flex flex-row">
-          <button class="bg-emerald-500 p-3 rounded-3xl text-white w-48">
-            Back this project
+        <div class=" buttons flex flex-row justify-between mt-7">
+          <button class="back bg-emerald-500 p-3 rounded-3xl text-white w-48">
+            <p>Back this project</p>
           </button>
-          <button class="mark flex flex-row ">
+          <button class="mark flex flex-row rounded-3xl w-40">
             <span>
               <img :src="bookmark" alt="bookmark">
             </span>
             <div class="text-block">
-              Bookmark
+              <p>Bookmark</p>
             </div>
 
           </button>
@@ -40,9 +40,13 @@
      
     </div>
 
+    <div class="facts">
       $89,914 of $100,000 backed
       5,007 total backers
-      56 days left
+      56 days left 
+    </div>
+
+     
 
       About this project
 
@@ -202,6 +206,11 @@ nav ul li {
   color: #ffffff;
   margin: 10px 0 0 45px;
 }
+.content{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .content .master{
   background: #ffffff;
   border-radius: 10px;
@@ -210,6 +219,14 @@ nav ul li {
   margin: 0 auto;
   width: 50%;
   margin-top: -100px;
+}
+.content .facts{
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 0 auto;
+  width: 50%;
 }
 .master p{
   font-size: 1rem;
@@ -228,6 +245,24 @@ nav ul li {
   height: 50px;
 }
 .buttons .mark{
-  
+  background:#ccc;
+}
+.buttons .back{
+  background: hsl(176, 72%, 28%);
+}
+.back p{
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  font-size: 16px;
+}
+.mark p{
+  font-weight: 700;
+  color: #6e8098;
+  margin: 15px 0 0 8px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
 }
 </style>
