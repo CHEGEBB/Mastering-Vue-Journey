@@ -19,12 +19,20 @@
         <div class="logo-con">
           <img :src="logoCon" alt="logo">
         </div>
+        <h1 class="text-2xl font-bold text-black">Mastercraft Bamboo Monitor Riser</h1>
+        <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 
-      Mastercraft Bamboo Monitor Riser
-      A beautiful & handcrafted monitor stand to reduce neck and eye strain.
+        <div>
+          <button>
+            Back this project
+          </button>
+          <button>
+            Bookmark
 
-      Back this project
-      Bookmark
+          </button>
+        </div>
+
+     
     </div>
 
       $89,914 of $100,000 backed
@@ -196,6 +204,12 @@ nav ul li {
   margin: 0 auto;
   width: 50%;
   margin-top: -100px;
+}
+.master p{
+  font-size: 1rem;
+  color: #6e8098;
+  margin: 10px 0 0 0;
+  font-weight: 500;
 }
 .master .logo-con {
   display: flex;
