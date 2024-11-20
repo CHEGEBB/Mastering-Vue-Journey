@@ -1,8 +1,6 @@
 <template>
   <div class=" min-h-screen m-0 ">
     <div class="header mt-0 w-full">
-      <div class="header-image w-full h-10">
-        <img :src="url" alt="header image" />
       <nav>
         <ul>
           <li>About</li>
@@ -10,7 +8,6 @@
           <li>Get Started</li>
         </ul>
       </nav>
-    </div>
     </div>
 
   Mastercraft Bamboo Monitor Riser
@@ -133,8 +130,7 @@ export default {
   color: #2c3e50;
 }
 .header{
-  height: 400px;
-  width: 100%;
+  background: url('./assets/images/image-hero-desktop.jpg') no-repeat center center/cover;
 }
 body{
   background:red;
@@ -144,5 +140,4 @@ body{
   padding:0;
   box-sizing:border-box;
 }
-
 </style>
