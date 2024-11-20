@@ -1,6 +1,9 @@
 <template>
   <div class=" min-h-screen m-0 ">
-    <div class="header mt-0 w-full">
+    <div class="header mt-0 w-full h-96 flex-row flex justify-between p-24 pt-4 text-white ">
+      <div class="logo">
+        <p>crowdfund</p>
+      </div>
       <nav>
         <ul>
           <li>About</li>
