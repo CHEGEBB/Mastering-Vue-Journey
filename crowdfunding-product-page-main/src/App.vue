@@ -79,10 +79,25 @@
 
       <div class="pledges flex flex-col">
         <div class="pledge1">
-      
-      Bamboo Stand Pledge $25 or more You get an ergonomic stand made of natural
-      bamboo. You've helped us launch our promotional campaign, and you’ll be added to a
-      special Backer member list. 101 left Select Reward
+          <div class="titles flex flex-row justify-between">
+            <h2>Bamboo Stand</h2>
+            <p>Pledge $25 or more </p>
+          </div>
+          <div class="content-text">
+            <p class="text-left"> You get an ergonomic stand made of natural
+              bamboo. You've helped us launch our promotional campaign, and you’ll be added to a
+              special Backer member list.
+            </p>
+          </div>
+          <div class="actions flex flex-row justify-between">
+            <div class="no-left flex flex-row">
+              <h2>101</h2>
+              <p>left</p>
+            </div>
+            <button>
+              Select Reward
+            </button>
+          </div>
     </div>
     <div class="pledge2">
       
@@ -308,5 +323,11 @@ nav ul li {
   font-weight: 500;
   color: hsl(0, 0%, 48%);
   margin: 10px 0 0 0;
+}
+.pledge1, .pledge2, .pledge3 {
+  margin-top: 20px;
+  border: 2px solid #ccc;
+  border-radius:8px;
+  padding: 20px;
 }
 </style>
