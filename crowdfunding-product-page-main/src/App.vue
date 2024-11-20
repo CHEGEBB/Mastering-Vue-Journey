@@ -236,7 +236,7 @@ nav ul li {
 }
 .facts{
   display: flex;
-  gap: 80px;
+  gap: 50px;
   padding: 20px;
 }
 .fact1, .fact2, .fact3 {
@@ -248,10 +248,11 @@ nav ul li {
 .fact1 .number, .fact2 .number, .fact3 .number {
   font-size: 2rem;
   font-weight: 700;
-  color: #6e8098;
+  color: hsl(0, 0%, 0%);
 }
 .fact1 .detail, .fact2 .detail, .fact3 .detail {
   font-size: 1rem;
-  color: #6e8098;
+  color:hsl(0, 0%, 48%);
+  font-weight: 500;
 }
 </style>
