@@ -60,8 +60,11 @@
           <div class="progress w-[90%] bg-[#ccc] h-3 rounded-3xl mx-6 -mt-9">
             <div class="progress-bar bg-[#3CB4AC] h-3 w-[84%] rounded-3xl"></div>
           </div>
-          <div class="modal-class">
-            <Modal v-if="isOpenModal" @close="closetheModal"/>
+          <!-- <div class="modal-class">
+            <M v-if="isOpenModal" @close="closetheModal"/>
+          </div> -->
+          <div class="selection-class">
+            <SelectionComponent v-if="isOpenModal" />
           </div>
         </div>
       </div>
@@ -158,7 +161,7 @@
 
 <script>
 import Modal from "./components/Modal.vue";
-import Selection from "./components/Selection.vue";
+import SelectionComponent from "./components/Selection.vue";
 
 export default {
   name: "App",
@@ -174,7 +177,7 @@ export default {
   },
   components: {
     Modal,
-    Selection,
+    SelectionComponent,
   },
   methods: {
     openModal() {
