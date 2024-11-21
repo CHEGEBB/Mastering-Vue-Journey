@@ -39,151 +39,146 @@
       </div>
 
       <div class="fact-section">
-      <div class="facts h-48 flex flex-row">
-        <div class="fact1">
-          <div class="number">$89,914</div>
-          <div class="detail">of $100,000 backed</div>
-        </div>
-        <div class="rectangle h-16 w-0.5 bg-[#ccc] rounded-3xl mt-8"></div>
+        <div class="facts h-48 flex flex-row">
+          <div class="fact1">
+            <div class="number">$89,914</div>
+            <div class="detail">of $100,000 backed</div>
+          </div>
+          <div class="rectangle h-16 w-0.5 bg-[#ccc] rounded-3xl mt-8"></div>
 
-        <div class="fact2">
-          <div class="number">5,007</div>
-          <div class="detail">total backers</div>
+          <div class="fact2">
+            <div class="number">5,007</div>
+            <div class="detail">total backers</div>
+          </div>
+          <div class="rectangle h-16 w-0.5 bg-[#ccc] rounded-3xl mt-8"></div>
+          <div class="fact3">
+            <div class="number">56</div>
+            <div class="detail">days left</div>
+          </div>
         </div>
-        <div class="rectangle h-16 w-0.5 bg-[#ccc] rounded-3xl mt-8"></div>
-        <div class="fact3">
-          <div class="number">56</div>
-          <div class="detail">days left</div>
+        <div class="progressbar">
+          <div class="progress w-[90%] bg-[#ccc] h-3 rounded-3xl mx-6 -mt-9">
+            <div class="progress-bar bg-[#3CB4AC] h-3 w-[84%] rounded-3xl"></div>
+          </div>
+          <div class="modal-class">
+            <Modal v-if="isOpenModal" />
+          </div>
         </div>
       </div>
-      <div class="progressbar">
-        <div class="progress w-[90%] bg-[#ccc] h-3 rounded-3xl mx-6 -mt-9">
-          <div class="progress-bar bg-[#3CB4AC] h-3 w-[84%] rounded-3xl"></div>
-        </div>
-        <div class="modal-class">
-          <Modal  v-if="isOpenModal"/>
-        </div>
+      <div class="about">
+        <h2 class="text-left p-4">About this project</h2>
+        <p class="text-left p-4">
+          The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that
+          elevates your screen to a more comfortable viewing height. Placing your monitor
+          at eye level has the potential to improve your posture and make you more
+          comfortable while at work, helping you stay focused on the task at hand.
+        </p>
+        <p class="text-left p-4">
+          Featuring artisan craftsmanship, the simplicity of design creates extra desk
+          space below your computer to allow notepads, pens, and USB sticks to be stored
+          under the stand.
+        </p>
 
-      </div>
-    </div>
-    <div class="about">
-      <h2 class="text-left p-4 ">About this project</h2>
-      <p class="text-left p-4">
-        The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
-      platform that elevates your screen to a more comfortable viewing height. Placing
-      your monitor at eye level has the potential to improve your posture and make you
-      more comfortable while at work, helping you stay focused on the task at hand.
-      </p>
-       <p class="text-left p-4">
-        Featuring artisan craftsmanship, the simplicity of design creates extra desk space
-      below your computer to allow notepads, pens, and USB sticks to be stored under the
-      stand.
-       </p>
-
-      <div class="pledges flex flex-col">
-        <div class="pledge1">
-          <div class="titles flex flex-row justify-between">
-            <h2>Bamboo Stand</h2>
-            <p>Pledge $25 or more </p>
-          </div>
-          <div class="content-text">
-            <p class="text-left"> You get an ergonomic stand made of natural
-              bamboo. You've helped us launch our promotional campaign, and you’ll be added to a
-              special Backer member list.
-            </p>
-          </div>
-          <div class="actions flex flex-row justify-between">
-            <div class="no-left flex flex-row">
-              <h2>101</h2>
-              <p>left</p>
+        <div class="pledges flex flex-col">
+          <div class="pledge1">
+            <div class="titles flex flex-row justify-between">
+              <h2>Bamboo Stand</h2>
+              <p>Pledge $25 or more</p>
             </div>
-            <button class="rounded-3xl w-36 h-12 mt-5" @click="openModal">
-              Select Reward
-            </button>
+            <div class="content-text">
+              <p class="text-left">
+                You get an ergonomic stand made of natural bamboo. You've helped us launch
+                our promotional campaign, and you’ll be added to a special Backer member
+                list.
+              </p>
+            </div>
+            <div class="actions flex flex-row justify-between">
+              <div class="no-left flex flex-row">
+                <h2>101</h2>
+                <p>left</p>
+              </div>
+              <button class="rounded-3xl w-36 h-12 mt-5" @click="openModal">
+                Select Reward
+              </button>
+            </div>
           </div>
-    </div>
-    <div class="pledge2">
-      <div class="titles flex flex-row justify-between">
-        <h2>Black Edition Stand</h2>
-        <p>Pledge $75 or more </p>
-      </div>
-      <div class="content-text">
-        <p class="text-left"> You get a Black Special Edition computer stand and a personal
-          thank you. You’ll be added to our Backer member list. Shipping is included.
-        </p>
-      </div>
-      <div class="actions flex flex-row justify-between">
-        <div class="no-left flex flex-row">
-          <h2>64</h2>
-          <p>left</p>
+          <div class="pledge2">
+            <div class="titles flex flex-row justify-between">
+              <h2>Black Edition Stand</h2>
+              <p>Pledge $75 or more</p>
+            </div>
+            <div class="content-text">
+              <p class="text-left">
+                You get a Black Special Edition computer stand and a personal thank you.
+                You’ll be added to our Backer member list. Shipping is included.
+              </p>
+            </div>
+            <div class="actions flex flex-row justify-between">
+              <div class="no-left flex flex-row">
+                <h2>64</h2>
+                <p>left</p>
+              </div>
+              <button class="rounded-3xl w-36 h-12 mt-5">Select Reward</button>
+            </div>
+          </div>
+          <div class="pledge3 relative z-30 out-of-stock-fade">
+            <div class="overlay"></div>
+            <div class="titles flex flex-row justify-between">
+              <h2>Mahogany Special Edition</h2>
+              <p>Pledge $200 or more</p>
+            </div>
+            <div class="content-text">
+              <p class="text-left">
+                You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+                personal thank you. You’ll be added to our Backer member list. Shipping is
+                included.
+              </p>
+            </div>
+            <div class="actions flex flex-row justify-between">
+              <div class="no-left flex flex-row">
+                <h2>0</h2>
+                <p>left</p>
+              </div>
+              <div class="out-of-stock">
+                <button class="bg-gray-500 rounded-3xl w-36 h-12 mt-5 text-white">
+                  <p>Out of stock</p>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selection modal start -->
+          <div class="hide hidden">
+            Back this project Want to support us in bringing Mastercraft Bamboo Monitor
+            Riser out in the world? Pledge with no reward Choose to support us without a
+            reward if you simply believe in our project. As a backer, you will be signed
+            up to receive product updates via email. Bamboo Stand Pledge $25 or more You
+            get an ergonomic stand made of natural bamboo. You've helped us launch our
+            promotional campaign, and you’ll be added to a special Backer member list. 101
+            left
+
+            <!-- Selected pledge start -->
+            Enter your pledge $25 Continue
+            <!-- Selected pledge end -->
+
+            Black Edition Stand Pledge $75 or more You get a Black Special Edition
+            computer stand and a personal thank you. You’ll be added to our Backer member
+            list. Shipping is included. 64 left
+
+            <!-- Selected pledge start -->
+            Enter your pledge $75 Continue
+            <!-- Selected pledge end -->
+
+            Mahogany Special Edition Pledge $200 or more You get two Special Edition
+            Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
+            to our Backer member list. Shipping is included. 0 left
+          </div>
         </div>
-        <button class="rounded-3xl w-36 h-12 mt-5">
-          Select Reward
-        </button>
       </div>
-    </div>
-    <div class="pledge3 relative z-30 out-of-stock-fade">
-      <div class="overlay"></div>
-      <div class="titles flex flex-row justify-between">
-        <h2>Mahogany Special Edition</h2>
-        <p>Pledge $200 or more </p>
-      </div>
-      <div class="content-text">
-        <p class="text-left">
-          You get two Special Edition Mahogany stands, a Backer T-Shirt,
-          and a personal thank you. You’ll be added to our Backer member list. Shipping is
-          included.
-        </p>
-      </div>
-      <div class="actions flex flex-row justify-between">
-        <div class="no-left flex flex-row">
-          <h2>0</h2>
-          <p>left</p>
-        </div>
-        <div class="out-of-stock">
-          <button class="bg-gray-500 rounded-3xl w-36 h-12 mt-5 text-white">
-            <p>
-              Out of stock
-            </p>
-          </button>
-        </div>
-      </div>
-    </div>    
-    
-      <!-- Selection modal start -->
-       <div class="hide hidden">
-
-      Back this project Want to support us in bringing Mastercraft Bamboo Monitor Riser
-      out in the world? Pledge with no reward Choose to support us without a reward if you
-      simply believe in our project. As a backer, you will be signed up to receive product
-      updates via email. Bamboo Stand Pledge $25 or more You get an ergonomic stand made
-      of natural bamboo. You've helped us launch our promotional campaign, and you’ll be
-      added to a special Backer member list. 101 left
-
-      <!-- Selected pledge start -->
-      Enter your pledge $25 Continue
-      <!-- Selected pledge end -->
-
-      Black Edition Stand Pledge $75 or more You get a Black Special Edition computer
-      stand and a personal thank you. You’ll be added to our Backer member list. Shipping
-      is included. 64 left
-
-      <!-- Selected pledge start -->
-      Enter your pledge $75 Continue
-      <!-- Selected pledge end -->
-
-      Mahogany Special Edition Pledge $200 or more You get two Special Edition Mahogany
-      stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer
-      member list. Shipping is included. 0 left
-    </div>
-    </div>
-    </div>
     </div>
 
     <!-- Selected pledge  start -->
-     <div class="start hidden">
-    Enter your pledge $200 Continue
-  </div>
+    <div class="start hidden">Enter your pledge $200 Continue</div>
     <!-- Selected pledge end -->
 
     <!-- Selection modal end -->
@@ -193,7 +188,7 @@
 </template>
 
 <script>
-import Modal from "./components/Modal.vue"
+import Modal from "./components/Modal.vue";
 
 export default {
   name: "App",
@@ -202,16 +197,16 @@ export default {
       url: require("@/assets/images/image-hero-desktop.jpg"),
       logoCon: require("@/assets/images/logo-mastercraft.svg"),
       bookmark: require("@/assets/images/icon-bookmark.svg"),
-      isOpenModal : false,
-      isOpenOverlay : false,
-      selectedPledge : null,
+      isOpenModal: false,
+      isOpenOverlay: false,
+      selectedPledge: null,
     };
   },
   components: {
     Modal,
   },
-  methods :{
-    openModal(){
+  methods: {
+    openModal() {
       this.isOpenModal = !this.isOpenModal;
       this.isOpenOverlay = !this.isOpenOverlay;
     },
@@ -336,111 +331,117 @@ nav ul li {
   text-align: center;
   font-size: 16px;
 }
-.facts{
+.facts {
   display: flex;
   gap: 50px;
   padding: 20px;
 }
-.fact1, .fact2, .fact3 {
+.fact1,
+.fact2,
+.fact3 {
   display: flex;
   flex-direction: column;
   gap: 6px;
   margin-top: 20px;
 }
-.fact1 .number, .fact2 .number, .fact3 .number {
+.fact1 .number,
+.fact2 .number,
+.fact3 .number {
   font-size: 2rem;
   font-weight: 700;
   color: hsl(0, 0%, 0%);
 }
-.fact1 .detail, .fact2 .detail, .fact3 .detail {
+.fact1 .detail,
+.fact2 .detail,
+.fact3 .detail {
   font-size: 1rem;
-  color:hsl(0, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   font-weight: 500;
 }
-.about h2{
+.about h2 {
   font-size: 1.5rem;
   font-weight: 700;
   color: hsl(0, 0%, 0%);
   margin: 20px 0 0 0;
 }
-.about p{
+.about p {
   font-size: 1rem;
   font-weight: 500;
   color: hsl(0, 0%, 48%);
   margin: 10px 0 0 0;
   width: 100%;
-
 }
-.pledge1, .pledge2, .pledge3 {
+.pledge1,
+.pledge2,
+.pledge3 {
   border: 1px solid #ccc;
-  border-radius:8px;
+  border-radius: 8px;
   padding: 20px;
   width: 93%;
   margin: 20px auto;
-
 }
-.titles{
+.titles {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 0 20px 0;
 }
-.titles h2{
+.titles h2 {
   font-size: 1.2rem;
   font-weight: 700;
   color: hsl(0, 0%, 0%);
   width: 70%;
   text-align: left;
 }
-.titles p{
+.titles p {
   font-size: 1rem;
   font-weight: 500;
-  color:hsl(176, 50%, 47%);
+  color: hsl(176, 50%, 47%);
   margin: 20px 0 0 0;
   text-align: right;
 }
-.actions button{
-  background:hsl(176, 50%, 47%);
+.actions button {
+  background: hsl(176, 50%, 47%);
   color: #ffffff;
   padding: 10px;
   font-weight: 500;
 }
-.actions button:hover{
-  background:hsl(176, 72%, 28%);
+.actions button:hover {
+  background: hsl(176, 72%, 28%);
 }
-.no-left h2{
+.no-left h2 {
   font-size: 2rem;
   font-weight: 700;
   color: hsl(0, 0%, 0%);
 }
-.no-left p{
+.no-left p {
   font-size: 1rem;
   font-weight: 500;
-  color:hsl(0, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   margin: 35px 0 0 10px;
 }
-.out-of-stock button{
+.out-of-stock button {
   background: hsl(0, 0%, 48%);
   color: #ffffff;
   padding: 10px;
   font-weight: 500;
 }
 .out-of-stock-fade {
-  opacity: 0.5; 
+  opacity: 0.5;
   pointer-events: none;
 }
 
 .out-of-stock-fade h2,
 .out-of-stock-fade p,
 .out-of-stock-fade button {
-  color: #6b7280; 
+  color: #6b7280;
 }
 
 .out-of-stock-fade button {
-  background-color: #9ca3af; 
-  cursor: not-allowed; 
+  background-color: #9ca3af;
+  cursor: not-allowed;
 }
-.out-of-stock button p{
+.out-of-stock button p {
   color: #ffffff;
   justify-content: center;
   align-items: center;
@@ -450,7 +451,6 @@ nav ul li {
 }
 
 .out-of-stock-fade:hover {
-  opacity: 0.5; 
+  opacity: 0.5;
 }
-
 </style>
