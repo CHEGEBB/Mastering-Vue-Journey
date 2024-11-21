@@ -395,6 +395,9 @@ nav ul li {
   padding: 10px;
   font-weight: 500;
 }
+.actions button:hover{
+  background:hsl(176, 72%, 28%);
+}
 .no-left h2{
   font-size: 2rem;
   font-weight: 700;
@@ -426,6 +429,14 @@ nav ul li {
 .out-of-stock-fade button {
   background-color: #9ca3af; 
   cursor: not-allowed; 
+}
+.out-of-stock button p{
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  margin: 0;
 }
 
 .out-of-stock-fade:hover {
