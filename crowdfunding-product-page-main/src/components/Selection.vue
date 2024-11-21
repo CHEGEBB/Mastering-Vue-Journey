@@ -2,8 +2,12 @@
   
           <!-- Selection modal start -->
           <div class="selection">
-            Back this project Want to support us in bringing Mastercraft Bamboo Monitor
-            Riser out in the world? Pledge with no reward Choose to support us without a
+            <h1>Back this project </h1>
+            <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+            
+            
+            
+             Pledge with no reward Choose to support us without a
             reward if you simply believe in our project. As a backer, you will be signed
             up to receive product updates via email. Bamboo Stand Pledge $25 or more You
             get an ergonomic stand made of natural bamboo. You've helped us launch our
