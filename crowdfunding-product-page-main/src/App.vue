@@ -119,7 +119,7 @@
         </button>
       </div>
     </div>
-    <div class="pledge3 bg-gray-400/30 relative z-30 blurred">
+    <div class="pledge3 relative z-30 out-of-stock-fade">
       <div class="overlay"></div>
       <div class="titles flex flex-row justify-between">
         <h2>Mahogany Special Edition</h2>
@@ -138,12 +138,12 @@
           <p>left</p>
         </div>
         <div class="out-of-stock">
-          <button class="bg-gray-500 rounded-3xl w-36 h-12 mt-5">
+          <button class="bg-gray-500 rounded-3xl w-36 h-12 mt-5 text-white">
             Out of stock
           </button>
         </div>
       </div>
-    </div>
+    </div>    
     
       <!-- Selection modal start -->
        <div class="hide hidden">
@@ -410,4 +410,24 @@ nav ul li {
   padding: 10px;
   font-weight: 500;
 }
+.out-of-stock-fade {
+  opacity: 0.5; /* Reduces visibility */
+  pointer-events: none; /* Makes it unclickable */
+}
+
+.out-of-stock-fade h2,
+.out-of-stock-fade p,
+.out-of-stock-fade button {
+  color: #6b7280; /* Light gray color for text */
+}
+
+.out-of-stock-fade button {
+  background-color: #9ca3af; /* Softer gray for button */
+  cursor: not-allowed; /* Show "not-allowed" cursor */
+}
+
+.out-of-stock-fade:hover {
+  opacity: 0.5; /* Prevent hover effects */
+}
+
 </style>
