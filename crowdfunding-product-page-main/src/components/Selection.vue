@@ -15,6 +15,19 @@
                         <p>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
                     </div>
                 </div>
+                <div class="choice2 flex flex-row">
+                    <div class="radio">
+                        <input type="radio" id="pledge2" name="pledge" value="pledge2">
+                    </div>
+                    <div class="content text-left">
+                        <div class="headings flex flex-row">
+                            <h2>Bamboo Stand</h2>
+                            <h2>Pledge $25 or more</h2>
+                            <h2>101 left</h2>
+                        </div>
+                        <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
+                    </div>
+                </div>
             </div>
             
             
@@ -69,7 +82,7 @@ export default {
     .choices {
         margin-top: 1rem;
     }
-    .choice1 {
+    .choice1, .choice2, .choice3 {
         border: 1px solid #B7C5D2;
         border-radius: 10px;
         padding: 1rem;

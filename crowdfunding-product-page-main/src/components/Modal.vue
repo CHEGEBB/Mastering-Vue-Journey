@@ -38,8 +38,8 @@ export default {
       this.$emit("close");
     },
     handleGotIt() {
-      this.isSelection = true; // Show the Selection component
-      this.showModal = false; // Hide the success modal
+      this.isSelection = true; 
+      this.showModal = false; 
     },
   },
 };
