@@ -139,7 +139,9 @@
         </div>
         <div class="out-of-stock">
           <button class="bg-gray-500 rounded-3xl w-36 h-12 mt-5 text-white">
-            Out of stock
+            <p>
+              Out of stock
+            </p>
           </button>
         </div>
       </div>
@@ -405,29 +407,29 @@ nav ul li {
   margin: 35px 0 0 10px;
 }
 .out-of-stock button{
-  background: #ccc;
+  background: hsl(0, 0%, 48%);
   color: #ffffff;
   padding: 10px;
   font-weight: 500;
 }
 .out-of-stock-fade {
-  opacity: 0.5; /* Reduces visibility */
-  pointer-events: none; /* Makes it unclickable */
+  opacity: 0.5; 
+  pointer-events: none;
 }
 
 .out-of-stock-fade h2,
 .out-of-stock-fade p,
 .out-of-stock-fade button {
-  color: #6b7280; /* Light gray color for text */
+  color: #6b7280; 
 }
 
 .out-of-stock-fade button {
-  background-color: #9ca3af; /* Softer gray for button */
-  cursor: not-allowed; /* Show "not-allowed" cursor */
+  background-color: #9ca3af; 
+  cursor: not-allowed; 
 }
 
 .out-of-stock-fade:hover {
-  opacity: 0.5; /* Prevent hover effects */
+  opacity: 0.5; 
 }
 
 </style>
