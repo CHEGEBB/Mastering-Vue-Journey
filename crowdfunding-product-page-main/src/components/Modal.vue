@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop" @click="closeModal">
+  <div class="backdrop" @click.self="closeModal">
     <div class="success">
       Thanks for your support! Your pledge brings us one step closer to sharing
       Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     closeModal() {
-      this.$emit("close-modal");
+      this.$emit('close');
     },
     
   },

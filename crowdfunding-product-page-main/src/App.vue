@@ -61,7 +61,7 @@
             <div class="progress-bar bg-[#3CB4AC] h-3 w-[84%] rounded-3xl"></div>
           </div>
           <div class="modal-class">
-            <Modal v-if="isOpenModal" />
+            <Modal v-if="isOpenModal" @close="closetheModal"/>
           </div>
         </div>
       </div>
@@ -210,6 +210,10 @@ export default {
       this.isOpenModal = !this.isOpenModal;
       this.isOpenOverlay = !this.isOpenOverlay;
     },
+    closetheModal () {
+      this.isOpenModal = false;
+      this.isOpenOverlay = false;
+    }
   },
 };
 </script>
