@@ -4,10 +4,14 @@
       <div class="icon">
         <img :src="checkCon" alt="check" />
       </div>
-      Thanks for your support!
-       Your pledge brings us one step closer to sharing
+      <h1>Thanks for your support!</h1>
+      <p>
+        Your pledge brings us one step closer to sharing
       Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign
       is completed. Got it!
+      </p>
+      
+       
     </div>
   </div>
 </template>
@@ -53,5 +57,14 @@ export default {
   }
   .hidden {
     display: none;
+  }
+  .success h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  .success p {
+    font-size: 0.9rem;
+    color: #6e7f7f;
+    margin: 1rem 0;
   }
 </style>
