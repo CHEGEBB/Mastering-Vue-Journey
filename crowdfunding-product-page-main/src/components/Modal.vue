@@ -1,38 +1,50 @@
 <template>
   <div class="backdrop" @click.self="closeModal">
-    <div class="success ">
+    <div class="success" v-show="showModal">
       <div class="icon">
         <img :src="checkCon" alt="check" />
       </div>
       <h1>Thanks for your support!</h1>
       <p>
         Your pledge brings us one step closer to sharing
-      Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign
-      is completed. 
+        Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign
+        is completed.
       </p>
-      <button  class="btn rounded-3xl">Got it!</button>
-      
-       
+      <button class="btn rounded-3xl" @click="handleGotIt">Got it!</button>
+    </div>
+    <div class="selection-class" v-if="isSelection">
+      <Selection />
     </div>
   </div>
 </template>
+
 <script>
+import Selection from "./Selection.vue";
+
 export default {
   name: "Modal",
   data() {
     return {
-      showModal: false,
-      checkCon:require("@/assets/images/icon-check.svg"),
+      showModal: true, // Initially true to show the modal
+      checkCon: require("@/assets/images/icon-check.svg"),
+      isSelection: false, // Controls visibility of Selection
     };
+  },
+  components: {
+    Selection,
   },
   methods: {
     closeModal() {
-      this.$emit('close');
+      this.$emit("close");
     },
-    
+    handleGotIt() {
+      this.isSelection = true; // Show the Selection component
+      this.showModal = false; // Hide the success modal
+    },
   },
 };
 </script>
+
 <style>
   .backdrop {
     position: fixed;
@@ -62,6 +74,7 @@ export default {
   .success h1 {
     font-size: 1.5rem;
     margin: 1rem 0;
+    font-weight: 700;
   }
   .success p {
     font-size: 1rem;
