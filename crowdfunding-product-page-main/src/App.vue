@@ -60,6 +60,9 @@
         <div class="progress w-[90%] bg-[#ccc] h-3 rounded-3xl mx-6 -mt-9">
           <div class="progress-bar bg-[#3CB4AC] h-3 w-[84%] rounded-3xl"></div>
         </div>
+        <div class="modal-class">
+          <Modal  v-if="isOpenModal"/>
+        </div>
 
       </div>
     </div>
@@ -94,7 +97,7 @@
               <h2>101</h2>
               <p>left</p>
             </div>
-            <button class="rounded-3xl w-36 h-12 mt-5">
+            <button class="rounded-3xl w-36 h-12 mt-5" @click="openModal">
               Select Reward
             </button>
           </div>
@@ -186,16 +189,12 @@
     <!-- Selection modal end -->
 
     <!-- Success modal start -->
-     <div class="success hidden">
-
-    Thanks for your support! Your pledge brings us one step closer to sharing Mastercraft
-    Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.
-    Got it!
-  </div>
   </div>
 </template>
 
-<script scoped>
+<script>
+import Modal from "./components/Modal.vue"
+
 export default {
   name: "App",
   data() {
@@ -203,9 +202,20 @@ export default {
       url: require("@/assets/images/image-hero-desktop.jpg"),
       logoCon: require("@/assets/images/logo-mastercraft.svg"),
       bookmark: require("@/assets/images/icon-bookmark.svg"),
+      isOpenModal : false,
+      isOpenOverlay : false,
+      selectedPledge : null,
     };
   },
-  components: {},
+  components: {
+    Modal,
+  },
+  methods :{
+    openModal(){
+      this.isOpenModal = !this.isOpenModal;
+      this.isOpenOverlay = !this.isOpenOverlay;
+    },
+  },
 };
 </script>
 
