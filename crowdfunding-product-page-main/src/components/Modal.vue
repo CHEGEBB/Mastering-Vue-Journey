@@ -1,7 +1,11 @@
 <template>
   <div class="backdrop" @click.self="closeModal">
-    <div class="success">
-      Thanks for your support! Your pledge brings us one step closer to sharing
+    <div class="success ">
+      <div class="icon">
+        <img :src="checkCon" alt="check" />
+      </div>
+      Thanks for your support!
+       Your pledge brings us one step closer to sharing
       Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign
       is completed. Got it!
     </div>
@@ -13,6 +17,7 @@ export default {
   data() {
     return {
       showModal: false,
+      checkCon:require("@/assets/images/icon-check.svg"),
     };
   },
   methods: {
@@ -40,6 +45,11 @@ export default {
     padding: 2rem;
     border-radius: 5px;
     text-align: center;
+    margin: 0 auto;
+  width: 40%;
+  }
+  .success .icon img {
+    margin: 0 auto;
   }
   .hidden {
     display: none;
