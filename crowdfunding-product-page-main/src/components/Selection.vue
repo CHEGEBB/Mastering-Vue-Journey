@@ -66,4 +66,15 @@ export default {
     .start {
         display: block;
     }
+    .choices {
+        margin-top: 1rem;
+    }
+    .choice1 {
+        border: 1px solid #B7C5D2;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        gap: 30px;
+    }
 </style>
