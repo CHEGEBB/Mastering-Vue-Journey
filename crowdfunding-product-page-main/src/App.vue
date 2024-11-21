@@ -63,9 +63,6 @@
           <div class="modal-class">
             <Modal v-if="isOpenModal" @close="closetheModal"/>
           </div>
-          <div class="selection-class">
-            <Selection />
-          </div>
         </div>
       </div>
       <div class="about">
@@ -121,7 +118,7 @@
                 <h2>64</h2>
                 <p>left</p>
               </div>
-              <button class="rounded-3xl w-36 h-12 mt-5">Select Reward</button>
+              <button class="rounded-3xl w-36 h-12 mt-5" @click="openModal">Select Reward</button>
             </div>
           </div>
           <div class="pledge3 relative z-30 out-of-stock-fade">
@@ -143,7 +140,7 @@
                 <p>left</p>
               </div>
               <div class="out-of-stock">
-                <button class="bg-gray-500 rounded-3xl w-36 h-12 mt-5 text-white">
+                <button class="bg-gray-500 rounded-3xl w-36 h-12 mt-5 text-white" >
                   <p>Out of stock</p>
                 </button>
               </div>

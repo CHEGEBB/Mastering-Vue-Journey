@@ -4,6 +4,18 @@
           <div class="selection">
             <h1>Back this project </h1>
             <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+
+            <div class="choices flex flex-col">
+                <div class="choice1 flex flex-row">
+                    <div class="radio">
+                        <input type="radio" id="pledge1" name="pledge" value="pledge1">
+                    </div>
+                    <div class="content text-left">
+                        <h2>Pledge with no reward</h2>
+                        <p>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
+                    </div>
+                </div>
+            </div>
             
             
             
