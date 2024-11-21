@@ -119,14 +119,15 @@
         </button>
       </div>
     </div>
-    <div class="pledge3 ">
+    <div class="pledge3 bg-gray-400/30 relative z-30 blurred">
       <div class="overlay"></div>
       <div class="titles flex flex-row justify-between">
         <h2>Mahogany Special Edition</h2>
         <p>Pledge $200 or more </p>
       </div>
       <div class="content-text">
-        <p class="text-left"> You get two Special Edition Mahogany stands, a Backer T-Shirt,
+        <p class="text-left">
+          You get two Special Edition Mahogany stands, a Backer T-Shirt,
           and a personal thank you. You’ll be added to our Backer member list. Shipping is
           included.
         </p>
@@ -141,10 +142,9 @@
             Out of stock
           </button>
         </div>
-        
       </div>
     </div>
-
+    
       <!-- Selection modal start -->
        <div class="hide hidden">
 
@@ -409,11 +409,5 @@ nav ul li {
   color: #ffffff;
   padding: 10px;
   font-weight: 500;
-}
-.overlay{
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  border-radius: 8px;
-  
 }
 </style>
