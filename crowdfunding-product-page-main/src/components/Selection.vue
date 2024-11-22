@@ -25,13 +25,13 @@
               name="pledge" 
               :value="index"
               v-model="selectedPledge"
-              class="mt-1"
+              class="mt-[5px]"
             >
           </div>
           <div class="content">
             <div class="option-header">
-              <h2>{{ option.title }}</h2>
-              <span v-if="option.price">Pledge ${{ option.price }} or more</span>
+              <h2 class="font-bold text-[18px]">{{ option.title }}</h2>
+              <span v-if="option.price" class="text-[#2EB8A8] font-bold text-[18px]">Pledge ${{ option.price }} or more</span>
               <span v-if="option.remaining !== undefined">{{ option.remaining }} left</span>
             </div>
             <p>{{ option.description }}</p>
