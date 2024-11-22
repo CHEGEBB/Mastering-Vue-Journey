@@ -1,4 +1,5 @@
 <template>
+<div>
     <div v-if="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex items-start z-[1000] overflow-y-auto py-24 px-4">
         <div class="bg-white p-4 md:p-8 rounded-lg w-full max-w-[95%] md:max-w-[700px] mx-auto my-auto relative">
             <div class="flex justify-between items-center mb-4">
@@ -21,13 +22,22 @@
                      }"
                      @click="option.remaining > 0 && selectPledge(index)">
                     <div class="flex-shrink-0">
-                        <input type="radio" 
-                               :id="`pledge${index}`" 
-                               name="pledge" 
-                               :value="index" 
-                               v-model="selectedPledge"
-                               :disabled="option.remaining === 0"
-                               class="mt-[5px]">
+                        <div class="custom-radio">
+                            <input type="radio" 
+                                   :id="`pledge${index}`" 
+                                   name="pledge" 
+                                   :value="index" 
+                                   v-model="selectedPledge"
+                                   :disabled="option.remaining === 0"
+                                   class="hidden">
+                            <label :for="`pledge${index}`" 
+                                   class="w-5 h-5 rounded-full border border-[#B7C5D2] inline-block relative cursor-pointer"
+                                   :class="{ 'border-[#3CB3C8]': selectedPledge === index }">
+                                <span class="dot absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[10px] h-[10px] rounded-full bg-[#3CB3C8] opacity-0 transition-opacity"
+                                      :class="{ 'opacity-100': selectedPledge === index }">
+                                </span>
+                            </label>
+                        </div>
                     </div>
                     <div class="flex-grow">
                         <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
@@ -52,12 +62,12 @@
                                     Enter your pledge
                                 </label>
                                 <div class="flex items-center gap-4">
-                                    <div class="flex items-center border border-[#B7C5D2] rounded-full px-4 py-2">
-                                        <span class="text-[#787878]">$</span>
+                                    <div class="flex items-center border border-[#B7C5D2] rounded-full px-4 py-2 focus-within:border-[#3CB3C8] transition-colors">
+                                        <span class="text-[#787878] mr-2">$</span>
                                         <input type="number" 
                                                :min="option.price || 1"
                                                v-model="pledgeAmount"
-                                               class="w-20 outline-none ml-2">
+                                               class="w-20 outline-none bg-transparent [appearance:textfield]">
                                     </div>
                                     <button @click="submitPledge"
                                             class="bg-[#3CB3C8] hover:bg-[#147b8c] text-white px-6 py-2 rounded-full transition-colors">
@@ -85,6 +95,7 @@
                 Got it!
             </button>
         </div>
+    </div>
     </div>
 </template>
 
@@ -184,5 +195,31 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.custom-radio input[type="radio"]:checked + label {
+    border-color: #3CB3C8;
+}
+
+.custom-radio input[type="radio"]:disabled + label {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.custom-radio label:hover:not(:disabled) {
+    border-color: #3CB3C8;
+}
+
+\.custom-radio input[type="radio"]:focus + label {
+    outline: 2px solid #3CB3C8;
+    outline-offset: 2px;
+}
+
+input[type="number"]:focus {
+    outline: none;
+}
+
+.focus-within\:border-\[#3CB3C8\]:focus-within {
+    border-color: #3CB3C8;
 }
 </style>
