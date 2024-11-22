@@ -204,20 +204,26 @@
 <script>
 import Modal from "./components/Modal.vue";
 import SelectionComponent from "./components/Selection.vue";
+import heroDesktopImage from './assets/images/image-hero-desktop.jpg'
+import heroMobileImage from './assets/images/image-hero-mobile.jpg'
+import logoMastercraft from './assets/images/logo-mastercraft.svg'
+import iconBookmark from './assets/images/icon-bookmark.svg'
+import iconHamburger from './assets/images/icon-hamburger.svg'
+import iconCloseMenu from './assets/images/icon-close-menu.svg'
 
 export default {
   name: "App",
   data() {
-    return {
-      url: require("@/assets/images/image-hero-desktop.jpg"),
-      logoCon: require("@/assets/images/logo-mastercraft.svg"),
-      bookmark: require("@/assets/images/icon-bookmark.svg"),
-      hamburgerIcon: require("@/assets/images/icon-hamburger.svg"),
-      closeIcon: require("@/assets/images/icon-close-menu.svg"),
-      isOpenModal: false,
-      isMenuOpen: false,
-      selectedPledge: null,
-    };
+   return {
+   url: heroDesktopImage,
+    logoCon: logoMastercraft,
+    bookmark: iconBookmark,
+    hamburgerIcon: iconHamburger,
+    closeIcon: iconCloseMenu,
+  isOpenModal: false,
+  isMenuOpen: false,
+  selectedPledge: null,
+}
   },
   components: {
     Modal,
