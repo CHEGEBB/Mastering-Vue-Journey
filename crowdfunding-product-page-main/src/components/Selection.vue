@@ -1,7 +1,6 @@
 <template>
-<div>
-    <div v-if="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[1000] overflow-y-auto py-4 px-4 md:py-8">
-        <div class="bg-white p-4 md:p-8 rounded-lg w-full max-w-[95%] md:max-w-[700px] relative">
+    <div v-if="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex items-start z-[1000] overflow-y-auto py-24 px-4">
+        <div class="bg-white p-4 md:p-8 rounded-lg w-full max-w-[95%] md:max-w-[700px] mx-auto my-auto relative">
             <div class="flex justify-between items-center mb-4">
                 <h1 class="font-bold text-xl md:text-2xl text-black">Back this project</h1>
                 <button @click="closeModal" class="hover:opacity-70 transition-opacity">
@@ -74,8 +73,8 @@
     </div>
     
     <div v-if="isShowSuccess" 
-         class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[1000] p-4">
-        <div class="bg-white p-6 rounded-lg max-w-[400px] text-center">
+         class="fixed inset-0 bg-black bg-opacity-50 flex items-center z-[1000] p-4">
+        <div class="bg-white p-6 rounded-lg max-w-[400px] mx-auto text-center">
             <img :src="checkIcon" alt="Success" class="mx-auto mb-4" />
             <h2 class="font-bold text-xl mb-4">Thanks for your support!</h2>
             <p class="text-[#787878] mb-6">
@@ -87,7 +86,6 @@
             </button>
         </div>
     </div>
-</div>
 </template>
 
 <script>
