@@ -213,5 +213,9 @@ export default {
   border-radius: 20px;
   cursor: pointer;
 }
+.pledge-input button:hover {
+  background-color: hsl(176, 72%, 28%);
+  color: white;
+}
 
 </style>
