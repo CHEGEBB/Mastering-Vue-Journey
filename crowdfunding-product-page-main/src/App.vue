@@ -11,9 +11,9 @@
           <!-- Desktop Navigation -->
           <nav class="hidden md:block mt-6">
             <ul class="flex space-x-8">
-              <li class="text-white hover:text-gray-200 cursor-pointer">About</li>
-              <li class="text-white hover:text-gray-200 cursor-pointer">Discover</li>
-              <li class="text-white hover:text-gray-200 cursor-pointer">Get Started</li>
+              <li class="text-white hover:text-gray-200 cursor-pointer font-medium">About</li>
+              <li class="text-white hover:text-gray-200 cursor-pointer font-medium">Discover</li>
+              <li class="text-white hover:text-gray-200 cursor-pointer font-medium">Get Started</li>
             </ul>
           </nav>
 
@@ -33,13 +33,13 @@
           class="absolute top-16 left-4 right-4 bg-white rounded-lg shadow-lg md:hidden z-40"
         >
           <ul class="py-4">
-            <li class="px-6 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer border-b">
+            <li class="px-6 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer border-b font-medium">
               About
             </li>
-            <li class="px-6 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer border-b">
+            <li class="px-6 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer border-b font-medium">
               Discover
             </li>
-            <li class="px-6 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer">
+            <li class="px-6 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer font-medium ">
               Get Started
             </li>
           </ul>
@@ -56,19 +56,22 @@
         <h1 class="text-xl md:text-2xl font-bold text-black mt-6">
           Mastercraft Bamboo Monitor Riser
         </h1>
-        <p class="text-gray-500 text-sm md:text-base mt-4">
+        <p class="text-gray-500 text-sm md:text-base mt-4 font-medium">
           A beautiful & handcrafted monitor stand to reduce neck and eye strain.
         </p>
 
         <div class="flex flex-col sm:flex-row justify-between gap-4 mt-7">
-          <button class="back bg-[#2EB8A8] hover:bg-[#116F68] p-3 rounded-full text-white w-full sm:w-48">
+          <button class="back bg-[#2EB8A8] hover:bg-[#116F68] p-3 rounded-full text-white w-full sm:w-48 font-medium">
             Back this project
           </button>
-          <button class="mark flex items-center justify-center rounded-full w-full sm:w-40 bg-gray-200">
+          <button class="mark flex  rounded-full w-full sm:w-40 bg-gray-200">
             <span>
-              <img :src="bookmark" alt="bookmark" class="w-12 h-12" />
+              <img :src="bookmark" alt="bookmark" class="w-12 h-12 " />
             </span>
-            <p class="hidden sm:block text-gray-700 ml-2">Bookmark</p>
+            <p >
+              <span class="hidden sm:block text-gray-700 ml-2 items-center justify-center mx-0 mt-3 font-medium">
+                Bookmark
+              </span></p>
           </button>
         </div>
       </div>
