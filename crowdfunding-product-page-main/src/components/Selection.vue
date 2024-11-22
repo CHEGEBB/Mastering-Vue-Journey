@@ -29,10 +29,10 @@
             >
           </div>
           <div class="content">
-            <div class="option-header">
+            <div class="option-header flex flex-row gap-2">
               <h2 class="font-bold text-[18px]">{{ option.title }}</h2>
-              <span v-if="option.price" class="text-[#2EB8A8] font-bold text-[18px]">Pledge ${{ option.price }} or more</span>
-              <span v-if="option.remaining !== undefined">{{ option.remaining }} left</span>
+              <span v-if="option.price" class="text-[#2EB8A8] font-bold text-[18px] -ml-20 ">Pledge ${{ option.price }} or more</span>
+              <span v-if="option.remaining !== undefined"><span class="font-bold text-[18px]">{{ option.remaining }} </span>  <span class="font-medium text-[#787878]">left</span></span>
             </div>
             <p>{{ option.description }}</p>
 
