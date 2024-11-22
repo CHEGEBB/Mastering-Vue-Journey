@@ -1,161 +1,200 @@
 <template>
   <div class="min-h-screen m-0">
-    <div class="header mt-0 w-full h-96 flex-row flex justify-between p-24 pt-4">
-      <div class="logo">
-        <p>crowdfund</p>
+    <!-- Responsive Header -->
+    <div class="relative">
+      <div class="header w-full h-[300px] md:h-96 px-4 md:px-24 pt-4">
+        <div class="flex justify-between items-center">
+          <div class="logo">
+            <p class="text-2xl md:text-3xl font-bold text-white">crowdfund</p>
+          </div>
+          
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:block mt-6">
+            <ul class="flex space-x-8">
+              <li class="text-white hover:text-gray-200 cursor-pointer">About</li>
+              <li class="text-white hover:text-gray-200 cursor-pointer">Discover</li>
+              <li class="text-white hover:text-gray-200 cursor-pointer">Get Started</li>
+            </ul>
+          </nav>
+
+          <!-- Mobile Hamburger -->
+          <button @click="toggleMenu" class="md:hidden z-50">
+            <img 
+              :src="isMenuOpen ? closeIcon : hamburgerIcon" 
+              alt="menu" 
+              class="w-6 h-6"
+            />
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div 
+          v-if="isMenuOpen" 
+          class="absolute top-16 left-4 right-4 bg-white rounded-lg shadow-lg md:hidden z-40"
+        >
+          <ul class="py-4">
+            <li class="px-6 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer border-b">
+              About
+            </li>
+            <li class="px-6 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer border-b">
+              Discover
+            </li>
+            <li class="px-6 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer">
+              Get Started
+            </li>
+          </ul>
+        </div>
       </div>
-      <nav class="mt-6">
-        <ul>
-          <li>About</li>
-          <li>Discover</li>
-          <li>Get Started</li>
-        </ul>
-      </nav>
     </div>
 
-    <div class="content">
-      <div class="master h-60">
-        <div class="logo-con">
-          <img :src="logoCon" alt="logo" />
+    <div class="content px-4 md:px-0">
+      <!-- Master Section -->
+      <div class="master bg-white rounded-lg shadow-md px-6 py-8 md:w-[52%] mx-auto -mt-20 relative">
+        <div class="logo-con absolute -top-7 left-1/2 transform -translate-x-1/2">
+          <img :src="logoCon" alt="logo" class="w-14 h-14" />
         </div>
-        <h1 class="text-2xl font-bold text-black mt-6">
+        <h1 class="text-xl md:text-2xl font-bold text-black mt-6">
           Mastercraft Bamboo Monitor Riser
         </h1>
-        <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+        <p class="text-gray-500 text-sm md:text-base mt-4">
+          A beautiful & handcrafted monitor stand to reduce neck and eye strain.
+        </p>
 
-        <div class="buttons flex flex-row justify-between mt-7">
-          <button class="back bg-emerald-500 p-3 rounded-3xl text-white w-48">
-            <p>Back this project</p>
+        <div class="flex flex-col sm:flex-row justify-between gap-4 mt-7">
+          <button class="back bg-emerald-500 hover:bg-emerald-600 p-3 rounded-full text-white w-full sm:w-48">
+            Back this project
           </button>
-          <button class="mark flex flex-row rounded-3xl w-40">
+          <button class="mark flex items-center justify-center rounded-full w-full sm:w-40 bg-gray-200">
             <span>
-              <img :src="bookmark" alt="bookmark" />
+              <img :src="bookmark" alt="bookmark" class="w-12 h-12" />
             </span>
-            <div class="text-block">
-              <p>Bookmark</p>
-            </div>
+            <p class="hidden sm:block text-gray-700 ml-2">Bookmark</p>
           </button>
         </div>
       </div>
 
-      <div class="fact-section">
-        <div class="facts h-48 flex flex-row">
-          <div class="fact1">
-            <div class="number">$89,914</div>
-            <div class="detail">of $100,000 backed</div>
+      <!-- Facts Section -->
+      <div class="fact-section bg-white rounded-lg shadow-md mt-6 px-6 py-8 md:w-[52%] mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+          <div class="fact1 border-b sm:border-b-0 sm:border-r border-gray-200 pb-6 sm:pb-0">
+            <div class="text-3xl font-bold">$89,914</div>
+            <div class="text-gray-500 text-sm mt-2">of $100,000 backed</div>
           </div>
-          <div class="rectangle h-16 w-0.5 bg-[#ccc] rounded-3xl mt-8"></div>
 
-          <div class="fact2">
-            <div class="number">5,007</div>
-            <div class="detail">total backers</div>
+          <div class="fact2 border-b sm:border-b-0 sm:border-r border-gray-200 pb-6 sm:pb-0">
+            <div class="text-3xl font-bold">5,007</div>
+            <div class="text-gray-500 text-sm mt-2">total backers</div>
           </div>
-          <div class="rectangle h-16 w-0.5 bg-[#ccc] rounded-3xl mt-8"></div>
+
           <div class="fact3">
-            <div class="number">56</div>
-            <div class="detail">days left</div>
+            <div class="text-3xl font-bold">56</div>
+            <div class="text-gray-500 text-sm mt-2">days left</div>
           </div>
         </div>
-        <div class="progressbar">
-          <div class="progress w-[90%] bg-[#ccc] h-3 rounded-3xl mx-6 -mt-9">
-            <div class="progress-bar bg-[#3CB4AC] h-3 w-[84%] rounded-3xl"></div>
-          </div>
-          <!-- <div class="modal-class">
-            <M v-if="isOpenModal" @close="closetheModal"/>
-          </div> -->
-          <div class="selection-class">
-            <SelectionComponent v-if="isOpenModal" />
+
+        <div class="mt-8">
+          <div class="bg-gray-200 h-3 rounded-full">
+            <div class="bg-emerald-500 h-3 rounded-full w-[84%]"></div>
           </div>
         </div>
       </div>
-      <div class="about">
-        <h2 class="text-left p-4">About this project</h2>
-        <p class="text-left p-4">
+
+      <!-- About Section -->
+      <div class="about bg-white rounded-lg shadow-md mt-6 px-6 py-8 md:w-[52%] mx-auto">
+        <h2 class="text-xl md:text-2xl font-bold text-left">About this project</h2>
+        <p class="text-gray-500 mt-4 text-left">
           The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that
           elevates your screen to a more comfortable viewing height. Placing your monitor
           at eye level has the potential to improve your posture and make you more
           comfortable while at work, helping you stay focused on the task at hand.
         </p>
-        <p class="text-left p-4">
+        <p class="text-gray-500 mt-4 text-left">
           Featuring artisan craftsmanship, the simplicity of design creates extra desk
           space below your computer to allow notepads, pens, and USB sticks to be stored
           under the stand.
         </p>
 
-        <div class="pledges flex flex-col">
-          <div class="pledge1">
-            <div class="titles flex flex-row justify-between">
-              <h2>Bamboo Stand</h2>
-              <p>Pledge $25 or more</p>
+        <!-- Pledges -->
+        <div class="mt-8 space-y-6">
+          <!-- Pledge 1 -->
+          <div class="pledge1 border rounded-lg p-6">
+            <div class="flex flex-col sm:flex-row justify-between gap-4">
+              <h2 class="text-lg font-bold">Bamboo Stand</h2>
+              <p class="text-emerald-500">Pledge $25 or more</p>
             </div>
-            <div class="content-text">
-              <p class="text-left">
-                You get an ergonomic stand made of natural bamboo. You've helped us launch
-                our promotional campaign, and you’ll be added to a special Backer member
-                list.
-              </p>
-            </div>
-            <div class="actions flex flex-row justify-between">
-              <div class="no-left flex flex-row">
-                <h2>101</h2>
-                <p>left</p>
+            <p class="text-gray-500 mt-4 text-left">
+              You get an ergonomic stand made of natural bamboo. You've helped us launch
+              our promotional campaign, and you'll be added to a special Backer member
+              list.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-6">
+              <div class="flex items-center">
+                <h2 class="text-3xl font-bold">101</h2>
+                <p class="text-gray-500 ml-2">left</p>
               </div>
-              <button class="rounded-3xl w-36 h-12 mt-5" @click="openModal">
+              <button 
+                class="bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-6 py-3 mt-4 sm:mt-0"
+                @click="openModal"
+              >
                 Select Reward
               </button>
             </div>
           </div>
-          <div class="pledge2">
-            <div class="titles flex flex-row justify-between">
-              <h2>Black Edition Stand</h2>
-              <p>Pledge $75 or more</p>
+
+          <!-- Pledge 2 -->
+          <div class="pledge2 border rounded-lg p-6">
+            <div class="flex flex-col sm:flex-row justify-between gap-4">
+              <h2 class="text-lg font-bold">Black Edition Stand</h2>
+              <p class="text-emerald-500">Pledge $75 or more</p>
             </div>
-            <div class="content-text">
-              <p class="text-left">
-                You get a Black Special Edition computer stand and a personal thank you.
-                You’ll be added to our Backer member list. Shipping is included.
-              </p>
-            </div>
-            <div class="actions flex flex-row justify-between">
-              <div class="no-left flex flex-row">
-                <h2>64</h2>
-                <p>left</p>
+            <p class="text-gray-500 mt-4 text-left">
+              You get a Black Special Edition computer stand and a personal thank you.
+              You'll be added to our Backer member list. Shipping is included.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-6">
+              <div class="flex items-center">
+                <h2 class="text-3xl font-bold">64</h2>
+                <p class="text-gray-500 ml-2">left</p>
               </div>
-              <button class="rounded-3xl w-36 h-12 mt-5" @click="openModal">Select Reward</button>
-            </div>
-          </div>
-          <div class="pledge3 relative z-30 out-of-stock-fade">
-            <div class="overlay"></div>
-            <div class="titles flex flex-row justify-between">
-              <h2>Mahogany Special Edition</h2>
-              <p>Pledge $200 or more</p>
-            </div>
-            <div class="content-text">
-              <p class="text-left">
-                You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
-                personal thank you. You’ll be added to our Backer member list. Shipping is
-                included.
-              </p>
-            </div>
-            <div class="actions flex flex-row justify-between">
-              <div class="no-left flex flex-row">
-                <h2>0</h2>
-                <p>left</p>
-              </div>
-              <div class="out-of-stock">
-                <button class="bg-gray-500 rounded-3xl w-36 h-12 mt-5 text-white" >
-                  <p>Out of stock</p>
-                </button>
-              </div>
+              <button 
+                class="bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-6 py-3 mt-4 sm:mt-0"
+                @click="openModal"
+              >
+                Select Reward
+              </button>
             </div>
           </div>
 
+          <!-- Pledge 3 (Out of Stock) -->
+          <div class="pledge3 border rounded-lg p-6 opacity-50">
+            <div class="flex flex-col sm:flex-row justify-between gap-4">
+              <h2 class="text-lg font-bold">Mahogany Special Edition</h2>
+              <p class="text-emerald-500">Pledge $200 or more</p>
+            </div>
+            <p class="text-gray-500 mt-4 text-left">
+              You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+              personal thank you. You'll be added to our Backer member list. Shipping is
+              included.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-6">
+              <div class="flex items-center">
+                <h2 class="text-3xl font-bold">0</h2>
+                <p class="text-gray-500 ml-2">left</p>
+              </div>
+              <button 
+                class="bg-gray-400 text-white rounded-full px-6 py-3 mt-4 sm:mt-0 cursor-not-allowed"
+                disabled
+              >
+                Out of stock
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-  
-
+    <!-- Selection Modal -->
+    <SelectionComponent v-if="isOpenModal" />
   </div>
 </template>
 
@@ -170,8 +209,10 @@ export default {
       url: require("@/assets/images/image-hero-desktop.jpg"),
       logoCon: require("@/assets/images/logo-mastercraft.svg"),
       bookmark: require("@/assets/images/icon-bookmark.svg"),
+      hamburgerIcon: require("@/assets/images/icon-hamburger.svg"),
+      closeIcon: require("@/assets/images/icon-close-menu.svg"),
       isOpenModal: false,
-      isOpenOverlay: false,
+      isMenuOpen: false,
       selectedPledge: null,
     };
   },
@@ -181,12 +222,10 @@ export default {
   },
   methods: {
     openModal() {
-      this.isOpenModal = !this.isOpenModal;
-      this.isOpenOverlay = !this.isOpenOverlay;
+      this.isOpenModal = true;
     },
-    closetheModal () {
-      this.isOpenModal = false;
-      this.isOpenOverlay = false;
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
     }
   },
 };
@@ -199,236 +238,22 @@ export default {
   font-family: "Commissioner", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  @apply bg-white;
 }
 
 .header {
   background: url("./assets/images/image-hero-desktop.jpg");
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
-body {
-  background: white;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-nav {
-  display: flex;
-}
-
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  margin: 10px 0 0 45px;
-}
-
-nav ul li {
-  margin-right: 20px;
-  font-weight: 500;
-  color: #ffffff;
-}
-
-.logo p {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 10px 0 0 45px;
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.content .master {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 52%;
-  margin-top: -100px;
-}
-.content .fact-section {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 52%;
-}
-.content .about {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 0 auto;
-  width: 52%;
-}
-.master p {
-  font-size: 1rem;
-  color: #6e8098;
-  margin: 10px 0 0 0;
-  font-weight: 500;
-}
-.master .logo-con {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: -45px 0 0 0;
-}
-.master .logo-con img {
-  width: 50px;
-  height: 50px;
-}
-.buttons .mark {
-  background: #ccc;
-}
-.buttons .back {
-  background: hsl(176, 72%, 28%);
-}
-.back p {
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-  font-size: 16px;
-}
-.mark p {
-  font-weight: 700;
-  color: #6e8098;
-  margin: 15px 0 0 8px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 16px;
-}
-.facts {
-  display: flex;
-  gap: 50px;
-  padding: 20px;
-}
-.fact1,
-.fact2,
-.fact3 {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 20px;
-}
-.fact1 .number,
-.fact2 .number,
-.fact3 .number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: hsl(0, 0%, 0%);
-}
-.fact1 .detail,
-.fact2 .detail,
-.fact3 .detail {
-  font-size: 1rem;
-  color: hsl(0, 0%, 48%);
-  font-weight: 500;
-}
-.about h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: hsl(0, 0%, 0%);
-  margin: 20px 0 0 0;
-}
-.about p {
-  font-size: 1rem;
-  font-weight: 500;
-  color: hsl(0, 0%, 48%);
-  margin: 10px 0 0 0;
-  width: 100%;
-}
-.pledge1,
-.pledge2,
-.pledge3 {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  width: 93%;
-  margin: 20px auto;
-}
-.titles {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 0 20px 0;
-}
-.titles h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: hsl(0, 0%, 0%);
-  width: 70%;
-  text-align: left;
-}
-.titles p {
-  font-size: 1rem;
-  font-weight: 500;
-  color: hsl(176, 50%, 47%);
-  margin: 20px 0 0 0;
-  text-align: right;
-}
-.actions button {
-  background: hsl(176, 50%, 47%);
-  color: #ffffff;
-  padding: 10px;
-  font-weight: 500;
-}
-.actions button:hover {
-  background: hsl(176, 72%, 28%);
-}
-.no-left h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: hsl(0, 0%, 0%);
-}
-.no-left p {
-  font-size: 1rem;
-  font-weight: 500;
-  color: hsl(0, 0%, 48%);
-  margin: 35px 0 0 10px;
-}
-.out-of-stock button {
-  background: hsl(0, 0%, 48%);
-  color: #ffffff;
-  padding: 10px;
-  font-weight: 500;
-}
-.out-of-stock-fade {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.out-of-stock-fade h2,
-.out-of-stock-fade p,
-.out-of-stock-fade button {
-  color: #6b7280;
-}
-
-.out-of-stock-fade button {
-  background-color: #9ca3af;
-  cursor: not-allowed;
-}
-.out-of-stock button p {
-  color: #ffffff;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 16px;
-  margin: 0;
-}
-
-.out-of-stock-fade:hover {
-  opacity: 0.5;
+@media (max-width: 768px) {
+  .header {
+    background: url("./assets/images/image-hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 </style>
