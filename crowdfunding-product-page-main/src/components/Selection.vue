@@ -2,19 +2,19 @@
   <div v-if="isModalOpen" class="backdrop" @click.self="closeModal">
     <div class="selection">
       <div class="modal-header">
-        <h1 class="font-bold ">Back this project</h1>
+        <h1 class="font-bold text-2xl text-black ">Back this project</h1>
         <button @click="closeModal" class="close-btn">
             <img :src="closeCon" alt="Close modal" />
         </button>
       </div>
 
-      <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+      <p class="text-left font-medium text-[#787878] my-8">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
       <div class="choices">
         <div 
           v-for="(option, index) in pledgeOptions" 
           :key="index" 
-          class="choice"
+          class="choice flex flex-row gap-8"
           :class="{ 'selected': selectedPledge === index }"
           @click="selectPledge(index)"
         >
@@ -25,6 +25,7 @@
               name="pledge" 
               :value="index"
               v-model="selectedPledge"
+              class="mt-1"
             >
           </div>
           <div class="content">
@@ -123,7 +124,7 @@ export default {
   background-color: white;
   padding: 2rem;
   border-radius: 5px;
-  width: 100%;
+  width: 53% !important;
   max-width: 700px;
   margin: auto;
   position: relative;
@@ -171,7 +172,6 @@ export default {
 
 .choice .radio {
   display: flex;
-  align-items: center;
 }
 
 .option-header {
