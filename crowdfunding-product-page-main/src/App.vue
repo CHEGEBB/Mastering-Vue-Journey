@@ -120,7 +120,7 @@
           <div class="pledge1 border rounded-lg p-6">
             <div class="flex flex-col sm:flex-row justify-between gap-4">
               <h2 class="text-lg font-bold">Bamboo Stand</h2>
-              <p class="text-emerald-500">Pledge $25 or more</p>
+              <p class="text-[#2EB8A8] font-bold">Pledge $25 or more</p>
             </div>
             <p class="text-gray-500 mt-4 text-left">
               You get an ergonomic stand made of natural bamboo. You've helped us launch
@@ -133,7 +133,7 @@
                 <p class="text-gray-500 ml-2">left</p>
               </div>
               <button 
-                class="bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-6 py-3 mt-4 sm:mt-0"
+                class="bg-[#2EB8A8] hover:bg-emerald-600 text-white rounded-full px-6 py-3 mt-4 sm:mt-0"
                 @click="openModal"
               >
                 Select Reward
