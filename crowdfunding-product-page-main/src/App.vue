@@ -61,7 +61,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row justify-between gap-4 mt-7">
-          <button class="back bg-emerald-500 hover:bg-emerald-600 p-3 rounded-full text-white w-full sm:w-48">
+          <button class="back bg-[#2EB8A8] hover:bg-[#116F68] p-3 rounded-full text-white w-full sm:w-48">
             Back this project
           </button>
           <button class="mark flex items-center justify-center rounded-full w-full sm:w-40 bg-gray-200">
@@ -94,7 +94,7 @@
 
         <div class="mt-8">
           <div class="bg-gray-200 h-3 rounded-full">
-            <div class="bg-emerald-500 h-3 rounded-full w-[84%]"></div>
+            <div class="bg-[#2EB8A8] h-3 rounded-full w-[84%]"></div>
           </div>
         </div>
       </div>
@@ -133,7 +133,7 @@
                 <p class="text-gray-500 ml-2">left</p>
               </div>
               <button 
-                class="bg-[#2EB8A8] hover:bg-emerald-600 text-white rounded-full px-6 py-3 mt-4 sm:mt-0"
+                class="bg-[#2EB8A8] hover:bg-[#116F68] text-white rounded-full px-6 py-3 mt-4 sm:mt-0"
                 @click="openModal"
               >
                 Select Reward
@@ -145,7 +145,7 @@
           <div class="pledge2 border rounded-lg p-6">
             <div class="flex flex-col sm:flex-row justify-between gap-4">
               <h2 class="text-lg font-bold">Black Edition Stand</h2>
-              <p class="text-emerald-500">Pledge $75 or more</p>
+              <p class="text-[#2EB8A8] font-bold" >Pledge $75 or more</p>
             </div>
             <p class="text-gray-500 mt-4 text-left">
               You get a Black Special Edition computer stand and a personal thank you.
@@ -157,7 +157,7 @@
                 <p class="text-gray-500 ml-2">left</p>
               </div>
               <button 
-                class="bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-6 py-3 mt-4 sm:mt-0"
+                class="bg-[#2EB8A8] hover:bg-[#116F68] text-white rounded-full px-6 py-3 mt-4 sm:mt-0"
                 @click="openModal"
               >
                 Select Reward
@@ -169,7 +169,7 @@
           <div class="pledge3 border rounded-lg p-6 opacity-50">
             <div class="flex flex-col sm:flex-row justify-between gap-4">
               <h2 class="text-lg font-bold">Mahogany Special Edition</h2>
-              <p class="text-emerald-500">Pledge $200 or more</p>
+              <p class="text-[#2EB8A8] font-bold">Pledge $200 or more</p>
             </div>
             <p class="text-gray-500 mt-4 text-left">
               You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
