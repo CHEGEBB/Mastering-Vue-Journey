@@ -142,12 +142,12 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
-  color: #gray;
+  color: gray;
   transition: color 0.3s ease;
 }
 
 .close-btn:hover {
-  color: #red;
+  color:red;
 }
 
 .choices {
