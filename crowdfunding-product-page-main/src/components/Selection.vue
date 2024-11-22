@@ -34,7 +34,7 @@
               <span v-if="option.price" class="text-[#2EB8A8] font-bold text-[18px] -ml-20 ">Pledge ${{ option.price }} or more</span>
               <span v-if="option.remaining !== undefined"><span class="font-bold text-[18px]">{{ option.remaining }} </span>  <span class="font-medium text-[#787878]">left</span></span>
             </div>
-            <p>{{ option.description }}</p>
+            <p class="text-left font-medium text-[#787878] text-[16px] ">{{ option.description }}</p>
 
             <!-- Pledge input section -->
             <div v-if="selectedPledge === index" class="pledge-input">
@@ -166,14 +166,13 @@ export default {
 }
 
 .choice.selected {
-  border-color: #3CB3C8;
+  border-color: hsl(176, 50%, 47%);
   box-shadow: 0 0 0 2px #3CB3C8;
 }
 
 .choice .radio {
   display: flex;
 }
-
 .option-header {
   display: flex;
   justify-content: space-between;
@@ -207,11 +206,12 @@ export default {
 }
 
 .pledge-input button {
-  background-color: #3CB3C8;
+  background-color:hsl(176, 50%, 47%);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
 }
+
 </style>
