@@ -1,6 +1,6 @@
 <template>
 <div class=" min-h-screen">
-  <div class="header bg-emerald-300"></div>
+  <div class="header bg-emerald-300 md:max-w-full md:h-10 sm:w-full sm:h-20 w-full h-40 "></div>
  <!-- Item Start -->
   Photosnap
   New!
