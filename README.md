@@ -15,7 +15,7 @@ Each challenge in this repository is designed to be functional, responsive, and 
 ![Design preview for the Crowdfunding product page coding challenge](./img/desktop-preview.jpg)
 
 
-## 2.Challenge 2
+## 2.Challenge 2: Job listings page
 ![Design preview for the joblisting page coding challenge](./img/job.jpg)
 
 ---
