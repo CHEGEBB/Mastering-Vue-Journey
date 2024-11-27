@@ -5,8 +5,8 @@
       <img src="@/assets/images/bg-header-desktop.svg" alt="header" class="hidden md:block">
       <img src="@/assets/images/bg-header-mobile.svg" alt="header" class="block md:hidden">
     </div>
-    <div class="content">
-      <div v-for="job in jobs" :key="job.id" class="job">
+    <div class="content flex flex-col justify-between">
+      <div v-for="job in jobs" :key="job.id" class="job bg-red-300">
         <h2>{{ job.position }}</h2>
         <p>{{ job.company }}</p>
         <p>Location: {{ job.location }}</p>
@@ -39,7 +39,7 @@ export default {
       )
     )
       .then((data) => {
-        this.jobs = data; // Combine all fetched jobs into the `jobs` array
+        this.jobs = data; 
       })
       .catch((error) => console.error("Error fetching jobs:", error));
   },
