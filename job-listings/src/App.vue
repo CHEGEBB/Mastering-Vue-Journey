@@ -1,6 +1,11 @@
 <template>
 <div class=" min-h-screen">
-  <div class="header bg-emerald-300 md:max-w-full md:h-10 sm:w-full sm:h-20 w-full h-40 "></div>
+  <div class="header bg-[#5ba4a4] m-0">
+    <!-- conditionally render and image depending on screen size if desktop or mobile -->
+    <img src="@/assets/images/bg-header-desktop.svg" alt="header" class="hidden md:block">
+    <img src="@/assets/images/bg-header-mobile.svg" alt="header" class="block md:hidden">
+
+  </div>
  <!-- Item Start -->
   Photosnap
   New!
@@ -183,21 +188,26 @@ export default {
 </script>
 
 <style lang="scss">
+$Desaturated-Dark-Cyan:hsl(180, 29%, 50%);
 $Background:hsl(180, 52%, 96%);
 $Filter-Tablets: hsl(180, 31%, 95%);
 $Dark-Grayish-Cyan:hsl(180, 8%, 52%);
 $Very-Dark-Grayish-Cyan:hsl(180, 14%, 20%);
 $font-league-spartan : 'League Spartan', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
   font-family: $font-league-spartan;
 }
 body{
   background: $Background;
+  margin: 0;
+  padding: 0;
+  
 }
 </style>
