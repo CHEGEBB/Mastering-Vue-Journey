@@ -1,5 +1,6 @@
 <template>
 <div class=" min-h-screen">
+  <div class="header"></div>
  <!-- Item Start -->
   Photosnap
   New!
