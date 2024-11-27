@@ -11,14 +11,8 @@ These projects highlight my journey of mastering Vue.js fundamentals like:
 - Vue Router and routing basics  
 
 Each challenge in this repository is designed to be functional, responsive, and visually appealing, showcasing my skills in frontend development.
-## 1.Challenge 1:Crowdfunding Product Page
+## 1.Challenge 1
 ![Design preview for the Crowdfunding product page coding challenge](./img/desktop-preview.jpg)
-
-
-## 2.Challenge 2:Job-Listing dashboard
-![Design preview for Job listing challenge](./img/job.jpg)
-
-
 
 ---
 
