@@ -1,5 +1,5 @@
 <template>
-<div class="bg-slate-400 min-h-screen">
+<div class=" min-h-screen">
  <!-- Item Start -->
   Photosnap
   New!
@@ -172,7 +172,7 @@
   </div>
 </template>
 
-<script>
+<script >
 
 export default {
   name: 'App',
@@ -181,7 +181,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+$Background:hsl(180, 52%, 96%);
+$Filter-Tablets: hsl(180, 31%, 95%);
+$Dark-Grayish-Cyan:hsl(180, 8%, 52%);
+$Very-Dark-Grayish-Cyan:hsl(180, 14%, 20%);
+$font-league-spartan : 'League Spartan', sans-serif;
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -189,8 +194,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  font-family: $font-league-spartan;
 }
 body{
-  background: red;
+  background: $Background;
 }
 </style>
