@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="bg-slate-400 min-h-screen">
  <!-- Item Start -->
   Photosnap
   New!
@@ -189,5 +189,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body{
+  background: red;
 }
 </style>
