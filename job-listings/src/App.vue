@@ -7,6 +7,10 @@
     </div>
     <div class="content flex flex-col">
       <div v-for="job in jobs" :key="job.id" class="job flex flex-row mx-auto my-0 mt-10 shadow-lg p-5 md:w-[70%] bg-white">
+         <div class="logo">
+    <img :src="getImagePath(job.logo)" alt="company logo" class="w-10 h-10" />
+  </div>
+  <div class="badges"></div>
         <h2>{{ job.position }}</h2>
         <p>{{ job.company }}</p>
         <p>Location: {{ job.location }}</p>
@@ -42,6 +46,11 @@ export default {
         this.jobs = data; 
       })
       .catch((error) => console.error("Error fetching jobs:", error));
+  },
+  methods :{
+    getImagePath(imageFileName){
+      return require(`@/assets/images/${imageFileName}`);
+    },
   },
 };
 </script>
