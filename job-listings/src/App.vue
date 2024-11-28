@@ -42,9 +42,9 @@
               <p class="text-[#7b8e8e] font-[600]">{{ job.location }}</p>
             </div>
           </div>
-          <div class="entail flex flex-row">
+          <div class="entail flex flex-row gap-6 mx-0 my-auto">
             <div class="role bg-[#5ba4a4]/20 md:w-20 md:h-6 rounded-sm ">
-              <h3 class="items-center justify-center mx-0 my-auto">{{ job.role }}</h3>
+              <h3 class="items-center justify-center mx-2.5 my-auto font-bold text-[#5ba4a4]">{{ job.role }}</h3>
             </div>
             <div class="level">
               <h3>{{ job.level }}</h3>
