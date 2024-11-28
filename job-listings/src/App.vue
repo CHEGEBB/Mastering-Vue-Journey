@@ -7,9 +7,9 @@
     </div>
     <div class="content flex flex-col">
       <div v-for="job in jobs" :key="job.id"
-        class="job md:flex md:flex-row sm:flex sm:flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[70%] bg-white">
+        class="job md:flex md:flex-row sm:flex sm:flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[70%] bg-white gap-8 ">
         <div class="logo">
-          <img :src="getImagePath(job.logo)" alt="company logo" class="w-10 h-10" />
+          <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3"  />
         </div>
         <div class="info flex flex-row">
   
