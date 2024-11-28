@@ -7,17 +7,20 @@
     </div>
     <div class="content flex flex-col">
       <div v-for="job in jobs" :key="job.id"
-        class="job md:flex md:flex-row sm:flex sm:flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[70%] bg-white gap-8 ">
+        class="job md:flex md:flex-row sm:flex sm:flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[70%] bg-white gap-8 rounded-sm">
         <div class="logo">
           <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3"  />
         </div>
-        <div class="info flex flex-row">
+        <div class="info justify-between flex flex-row gap-40">
   
           <div class="details flex flex-col">
-            <div class="badges flex flex-row">
-              <p>{{ job.company }}</p>
+            <div class="badges flex flex-row gap-3">
+              <p class="font-bold text-[#5ba4a4]">{{ job.company }}</p>
               <div class="new" v-if="job.new">
-                <span class="badge">New</span>
+                <span class="badge bg-[#5ba4a4]  w-12 h-5 rounded-2xl  flex items-center justify-center">
+                  
+                  <p class="text-white text-xs font-bold mt-1">NEW!</p>
+                  </span>
               </div>
               <div class="featured" v-if="job.featured">
                 <span class="badge">Featured</span>
