@@ -1,7 +1,6 @@
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen mb-6">
     <div class="header bg-[#5ba4a4] m-0">
-      <!-- Conditionally render an image depending on screen size -->
       <img src="@/assets/images/bg-header-desktop.svg" alt="header" class="hidden md:block">
       <img src="@/assets/images/bg-header-mobile.svg" alt="header" class="block md:hidden">
     </div>
@@ -11,8 +10,7 @@
         <div class="logo">
           <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3" />
         </div>
-        <div class="info justify-between flex flex-row gap-28">
-
+        <div class="info flex flex-row flex-1 justify-between">
           <div class="details flex flex-col">
             <div class="badges flex flex-row gap-3">
               <p class="font-bold text-[#5ba4a4]">{{ job.company }}</p>
@@ -38,8 +36,8 @@
               <p class="text-[#7b8e8e] font-[600]">{{ job.location }}</p>
             </div>
           </div>
-          <div class="entail flex flex-row  mx-0 my-auto bg-red-400 justify-end space-x-2.5">
-            <div class="role bg-[#5ba4a4]/20 inline-block px-4 py-1 rounded-sm ">
+          <div class="entail flex flex-wrap items-center justify-end gap-2.5 ml-auto">
+            <div class="role bg-[#5ba4a4]/20 inline-block px-4 py-1 rounded-sm">
               <h3 class="text-right font-bold text-[#5ba4a4]">{{ job.role }}</h3>
             </div>
             <div class="level bg-[#5ba4a4]/20 inline-block px-4 py-1 rounded-sm">
@@ -68,8 +66,6 @@ export default {
   },
   mounted() {
     const jobIds = Array.from({ length: 10 }, (_, i) => i);
-
-    // Fetch each job by ID
     Promise.all(
       jobIds.map((id) =>
         fetch(`http://localhost:3000/${id}`).then((response) => response.json())
