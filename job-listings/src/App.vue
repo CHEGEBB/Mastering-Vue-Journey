@@ -6,12 +6,12 @@
     </div>
     <div class="content flex flex-col">
       <div v-for="job in jobs" :key="job.id"
-        class="job md:flex md:flex-row sm:flex sm:flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-sm">
+        class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-sm">
         <div class="logo">
           <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3" />
         </div>
         <div class="info flex flex-row flex-1 justify-between">
-          <div class="details flex flex-col">
+          <div class="details flex flex-col sm:flex sm:flex-col">
             <div class="badges flex flex-row gap-3">
               <p class="font-bold text-[#5ba4a4]">{{ job.company }}</p>
               <div class="new" v-if="job.new">
@@ -36,7 +36,8 @@
               <p class="text-[#7b8e8e] font-[600]">{{ job.location }}</p>
             </div>
           </div>
-          <div class="entail flex flex-wrap items-center justify-end gap-2.5 ml-auto">
+          <hr class="hidden sm:block md:hidden"/>
+          <div class="entail flex flex-wrap items-center justify-end gap-2.5 ml-auto sm:flex sm:flex-wrap">
             <div class="role bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px]">
               <h3 class="text-right font-bold text-[#5ba4a4] mt-1">{{ job.role }}</h3>
             </div>
