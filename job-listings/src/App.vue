@@ -43,8 +43,8 @@
             </div>
           </div>
           <div class="entail flex flex-row">
-            <div class="role">
-              <h3>{{ job.role }}</h3>
+            <div class="role bg-[#5ba4a4]/20 md:w-20 md:h-6 rounded-sm ">
+              <h3 class="items-center justify-center mx-0 my-auto">{{ job.role }}</h3>
             </div>
             <div class="level">
               <h3>{{ job.level }}</h3>
@@ -65,7 +65,7 @@ export default {
   name: 'App',
   data() {
     return {
-      jobs: [], // Array to store all fetched jobs
+      jobs: [],
     };
   },
   mounted() {
