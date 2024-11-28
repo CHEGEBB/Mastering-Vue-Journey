@@ -7,25 +7,23 @@
     </div>
     <div class="content flex flex-col">
       <div v-for="job in jobs" :key="job.id"
-        class="job md:flex md:flex-row sm:flex sm:flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[70%] bg-white gap-8 rounded-sm">
+        class="job md:flex md:flex-row sm:flex sm:flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-sm">
         <div class="logo">
-          <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3"  />
+          <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3" />
         </div>
-        <div class="info justify-between flex flex-row gap-40">
-  
+        <div class="info justify-between flex flex-row gap-28">
+
           <div class="details flex flex-col">
             <div class="badges flex flex-row gap-3">
               <p class="font-bold text-[#5ba4a4]">{{ job.company }}</p>
               <div class="new" v-if="job.new">
-                <span class="badge bg-[#5ba4a4]  w-12 h-5 rounded-2xl  flex items-center justify-center">
-                  
+                <span class="badge bg-[#5ba4a4] w-12 h-5 rounded-2xl flex items-center justify-center">
                   <p class="text-white text-xs font-bold mt-1">NEW!</p>
-                  </span>
+                </span>
               </div>
               <div class="featured" v-if="job.featured">
-                  <span class="badge bg-[#2c3a3a] w-16 h-5 rounded-2xl flex items-center justify-center">
-                    <p class="text-white text-xs font-bold mt-1">FEATURED</p>
-  
+                <span class="badge bg-[#2c3a3a] w-16 h-5 rounded-2xl flex items-center justify-center">
+                  <p class="text-white text-xs font-bold mt-1">FEATURED</p>
                 </span>
               </div>
             </div>
@@ -34,25 +32,25 @@
             </div>
             <div class="duration flex flex-row gap-3">
               <p class="text-[#7b8e8e] font-[600]">{{job.postedAt}}</p>
-              <div class="dot-separator w-1 h-1 rounded-[50%] bg-[#7b8e8e] mx-0 my-auto">
-              </div>
+              <div class="dot-separator w-1 h-1 rounded-[50%] bg-[#7b8e8e] mx-0 my-auto"></div>
               <p class="text-[#7b8e8e] font-[600]">{{job.contract}}</p>
-              <div class="dot-separator w-1 h-1 rounded-[50%] bg-[#7b8e8e] mx-0 my-auto">
-              </div>
+              <div class="dot-separator w-1 h-1 rounded-[50%] bg-[#7b8e8e] mx-0 my-auto"></div>
               <p class="text-[#7b8e8e] font-[600]">{{ job.location }}</p>
             </div>
           </div>
-          <div class="entail flex flex-row gap-6 mx-0 my-auto">
-            <div class="role bg-[#5ba4a4]/20 md:w-20 md:h-6 rounded-sm ">
-              <h3 class="items-center justify-center mx-2.5 my-auto font-bold text-[#5ba4a4]">{{ job.role }}</h3>
+          <div class="entail flex flex-row  mx-0 my-auto bg-red-400 justify-end space-x-2.5">
+            <div class="role bg-[#5ba4a4]/20 inline-block px-4 py-1 rounded-sm ">
+              <h3 class="text-right font-bold text-[#5ba4a4]">{{ job.role }}</h3>
             </div>
-            <div class="level">
-              <h3>{{ job.level }}</h3>
+            <div class="level bg-[#5ba4a4]/20 inline-block px-4 py-1 rounded-sm">
+              <h3 class="text-right font-bold text-[#5ba4a4]">{{ job.level }}</h3>
             </div>
-            <div class="languages" v-for="language in job.languages" :key="language">
-              {{ language}}
+            <div class="languages bg-[#5ba4a4]/20 inline-block px-4 py-1 rounded-sm" v-for="language in job.languages" :key="language">
+              <h3 class="text-right font-bold text-[#5ba4a4]">{{ language }}</h3>
             </div>
-            <div class="tools" v-for="tool in job.tools" :key="tool">{{tool}}</div>
+            <div class="tools bg-[#5ba4a4]/20 inline-block px-4 py-1 rounded-sm" v-for="tool in job.tools" :key="tool">
+              <h3 class="text-right font-bold text-[#5ba4a4]">{{ tool }}</h3>
+            </div>
           </div>
         </div>
       </div>
@@ -114,5 +112,10 @@ body {
   background: $Background;
   margin: 0;
   padding: 0;
+}
+
+.entail div {
+  min-width: max-content;
+  text-align: right;
 }
 </style>
