@@ -10,7 +10,14 @@
          <div class="logo">
     <img :src="getImagePath(job.logo)" alt="company logo" class="w-10 h-10" />
   </div>
-  <div class="badges"></div>
+  <div class="badges flex flex-row justify-between">
+    <div class="new" v-if="job.new">
+      <span class="badge">New</span>  
+    </div>
+    <div class="featured" v-if="job.featured">
+      <span class="badge">Featured</span>
+    </div>
+  </div>
         <h2>{{ job.position }}</h2>
         <p>{{ job.company }}</p>
         <p>Location: {{ job.location }}</p>
