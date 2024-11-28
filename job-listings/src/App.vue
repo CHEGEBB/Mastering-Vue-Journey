@@ -11,35 +11,44 @@
         <div class="logo">
           <img :src="getImagePath(job.logo)" alt="company logo" class="w-10 h-10" />
         </div>
-        <div class="details flex flex-col">
-          <div class="badges flex flex-row">
-            <p>{{ job.company }}</p>
-            <div class="new" v-if="job.new">
-              <span class="badge">New</span>
+        <div class="info flex flex-row">
+  
+          <div class="details flex flex-col">
+            <div class="badges flex flex-row">
+              <p>{{ job.company }}</p>
+              <div class="new" v-if="job.new">
+                <span class="badge">New</span>
+              </div>
+              <div class="featured" v-if="job.featured">
+                <span class="badge">Featured</span>
+              </div>
             </div>
-            <div class="featured" v-if="job.featured">
-              <span class="badge">Featured</span>
+            <div class="position">
+              <h2>{{ job.position }}</h2>
+            </div>
+            <div class="duration flex flex-row">
+              <p>{{job.postedAt}}</p>
+              <div class="dot-separator w-1 h-1 rounded-[50%] bg-slate-400">
+              </div>
+              <p>{{job.contract}}</p>
+              <div class="dot-separator w-1 h-1 rounded-[50%] bg-slate-400">
+              </div>
+              <p>{{ job.location }}</p>
             </div>
           </div>
-          <div class="position">
-            <h2>{{ job.position }}</h2>
-          </div>
-          <div class="duration flex flex-row">
-            <p>{{job.postedAt}}</p>
-            <div class="dot-separator w-1 h-1 rounded-[50%] bg-slate-400">
-          </div>
-          <p>{{job.contract}}</p>
-          <div class="dot-separator w-1 h-1 rounded-[50%] bg-slate-400">
-          </div>
-          <p>{{ job.location }}</p>
+          <div class="entail flex flex-row">
+            <div class="role">
+              <h3>{{ job.role }}</h3>
+            </div>
+            <div class="level">
+              <h3>{{ job.level }}</h3>
+            </div>
+            <div class="languages" v-for="language in job.languages" :key="language">
+              {{ language}}
+            </div>
+            <div class="tools" v-for="tool in job.tools" :key="tool">{{tool}}</div>
           </div>
         </div>
-        <ul class="flex flex-row">
-          <li v-for="language in job.languages" :key="language">{{ language }}</li>
-        </ul>
-        <ul>
-          <li v-for="tool in job.tools" :key="tool">{{ tool }}</li>
-        </ul>
       </div>
     </div>
   </div>
