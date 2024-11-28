@@ -13,6 +13,7 @@
         </div>
         <div class="details flex flex-col">
           <div class="badges flex flex-row">
+            <p>{{ job.company }}</p>
             <div class="new" v-if="job.new">
               <span class="badge">New</span>
             </div>
@@ -27,10 +28,12 @@
             <p>{{job.postedAt}}</p>
             <div class="dot-separator w-1 h-1 rounded-[50%] bg-slate-400">
           </div>
+          <p>{{job.contract}}</p>
+          <div class="dot-separator w-1 h-1 rounded-[50%] bg-slate-400">
+          </div>
+          <p>{{ job.location }}</p>
           </div>
         </div>
-        <p>{{ job.company }}</p>
-        <p>Location: {{ job.location }}</p>
         <ul class="flex flex-row">
           <li v-for="language in job.languages" :key="language">{{ language }}</li>
         </ul>
