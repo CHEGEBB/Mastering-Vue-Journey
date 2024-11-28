@@ -5,8 +5,8 @@
       <img src="@/assets/images/bg-header-desktop.svg" alt="header" class="hidden md:block">
       <img src="@/assets/images/bg-header-mobile.svg" alt="header" class="block md:hidden">
     </div>
-    <div class="content flex flex-col justify-between">
-      <div v-for="job in jobs" :key="job.id" class="job bg-red-300">
+    <div class="content flex flex-col">
+      <div v-for="job in jobs" :key="job.id" class="job flex flex-row mx-auto my-0 mt-10 shadow-md">
         <h2>{{ job.position }}</h2>
         <p>{{ job.company }}</p>
         <p>Location: {{ job.location }}</p>
