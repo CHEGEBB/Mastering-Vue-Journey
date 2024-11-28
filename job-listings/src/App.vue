@@ -23,20 +23,23 @@
                   </span>
               </div>
               <div class="featured" v-if="job.featured">
-                <span class="badge">Featured</span>
+                  <span class="badge bg-[#2c3a3a] w-16 h-5 rounded-2xl flex items-center justify-center">
+                    <p class="text-white text-xs font-bold mt-1">FEATURED</p>
+  
+                </span>
               </div>
             </div>
             <div class="position">
-              <h2>{{ job.position }}</h2>
+              <h2 class="text-[#2c3a3a] font-bold text-xl">{{ job.position }}</h2>
             </div>
-            <div class="duration flex flex-row">
-              <p>{{job.postedAt}}</p>
-              <div class="dot-separator w-1 h-1 rounded-[50%] bg-slate-400">
+            <div class="duration flex flex-row gap-3">
+              <p class="text-[#7b8e8e] font-[600]">{{job.postedAt}}</p>
+              <div class="dot-separator w-1 h-1 rounded-[50%] bg-[#7b8e8e] mx-0 my-auto">
               </div>
-              <p>{{job.contract}}</p>
-              <div class="dot-separator w-1 h-1 rounded-[50%] bg-slate-400">
+              <p class="text-[#7b8e8e] font-[600]">{{job.contract}}</p>
+              <div class="dot-separator w-1 h-1 rounded-[50%] bg-[#7b8e8e] mx-0 my-auto">
               </div>
-              <p>{{ job.location }}</p>
+              <p class="text-[#7b8e8e] font-[600]">{{ job.location }}</p>
             </div>
           </div>
           <div class="entail flex flex-row">
