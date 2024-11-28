@@ -6,11 +6,11 @@
       <img src="@/assets/images/bg-header-mobile.svg" alt="header" class="block md:hidden">
     </div>
     <div class="content flex flex-col">
-      <div v-for="job in jobs" :key="job.id" class="job flex flex-row mx-auto my-0 mt-10 shadow-md">
+      <div v-for="job in jobs" :key="job.id" class="job flex flex-row mx-auto my-0 mt-10 shadow-lg p-5 md:w-[70%] bg-white">
         <h2>{{ job.position }}</h2>
         <p>{{ job.company }}</p>
         <p>Location: {{ job.location }}</p>
-        <ul>
+        <ul class="flex flex-row">
           <li v-for="language in job.languages" :key="language">{{ language }}</li>
         </ul>
         <ul>
