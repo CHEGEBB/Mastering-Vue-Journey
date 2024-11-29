@@ -40,16 +40,16 @@
           <hr class="hidden sm:block md:hidden"/>
           <div class="entail flex flex-wrap items-center justify-end gap-2.5 ml-auto sm:flex sm:flex-wrap">
             <div class="role bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4]">
-              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 ">{{ job.role }}</h3>
+              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ job.role }}</h3>
             </div>
-            <div class="level bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4]">
-              <h3 class="text-right font-bold text-[#5ba4a4] mt-1">{{ job.level }}</h3>
+            <div class="level bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] ">
+              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ job.level }}</h3>
             </div>
             <div class="languages bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] " v-for="language in job.languages" :key="language">
-              <h3 class="text-right font-bold text-[#5ba4a4] mt-1">{{ language }}</h3>
+              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ language }}</h3>
             </div>
-            <div class="tools bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] hover:text-white" v-for="tool in job.tools" :key="tool">
-              <h3 class="text-right font-bold text-[#5ba4a4] mt-1">{{ tool }}</h3>
+            <div class="tools bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] " v-for="tool in job.tools" :key="tool">
+              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ tool }}</h3>
             </div>
           </div>
         </div>
