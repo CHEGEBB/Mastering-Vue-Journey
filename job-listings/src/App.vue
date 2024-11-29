@@ -6,8 +6,8 @@
     </div>
     <div class="content flex flex-col">
       <div v-for="job in jobs" :key="job.id"
-        class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-sm cursor-pointer " @click="toggleChoice(job.id)"
-  :style="{ borderLeft: activeJobId === job.id ? '8px solid #5ba4a4' : '8px solid transparent' }" >
+        class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-sm cursor-pointer "  @click="toggleChoice(job.id)"
+  :style="{ borderLeft: selectedJobIds.includes(job.id) ? '8px solid #5ba4a4' : '8px solid transparent' }" >
         <div class="logo">
           <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3" />
         </div>
@@ -83,9 +83,16 @@ export default {
     getImagePath(imageFileName) {
       return require(`@/assets/images/${imageFileName}`);
     },
-    toggleChoice (id) {
-      this.activeJobId = this.activeJobId === id ? null : id;
-    },
+     toggleChoice(id) {
+    const index = this.selectedJobIds.indexOf(id);
+    if (index === -1) {
+      // If the job ID is not in the array, add it
+      this.selectedJobIds.push(id);
+    } else {
+      // If the job ID is already in the array, remove it
+      this.selectedJobIds.splice(index, 1);
+    }
+  },
   },
 };
 </script>
