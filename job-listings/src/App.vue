@@ -7,7 +7,7 @@
     <div class="content flex flex-col">
       <div v-for="job in jobs" :key="job.id"
         class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-sm cursor-pointer "  @click="toggleChoice(job.id)"
-  :style="{ borderLeft: selectedJobIds.includes(job.id) ? '8px solid #5ba4a4' : '8px solid transparent' }" >
+  :style="{ borderLeft: selectedJobIds.includes(job.id) ? '4px solid #5ba4a4' : '4px solid transparent' }" >
         <div class="logo">
           <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3" />
         </div>
@@ -27,7 +27,7 @@
               </div>
             </div>
             <div class="position">
-              <h2 class="text-[#2c3a3a] font-bold text-xl">{{ job.position }}</h2>
+              <h2 class="text-[#2c3a3a] font-bold text-xl hover:text-[#5ba4a4]">{{ job.position }}</h2>
             </div>
             <div class="duration flex flex-row gap-3">
               <p class="text-[#7b8e8e] font-[600]">{{job.postedAt}}</p>
@@ -39,16 +39,16 @@
           </div>
           <hr class="hidden sm:block md:hidden"/>
           <div class="entail flex flex-wrap items-center justify-end gap-2.5 ml-auto sm:flex sm:flex-wrap">
-            <div class="role bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px]">
-              <h3 class="text-right font-bold text-[#5ba4a4] mt-1">{{ job.role }}</h3>
+            <div class="role bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4]">
+              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 ">{{ job.role }}</h3>
             </div>
-            <div class="level bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px]">
+            <div class="level bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4]">
               <h3 class="text-right font-bold text-[#5ba4a4] mt-1">{{ job.level }}</h3>
             </div>
-            <div class="languages bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px]" v-for="language in job.languages" :key="language">
+            <div class="languages bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] " v-for="language in job.languages" :key="language">
               <h3 class="text-right font-bold text-[#5ba4a4] mt-1">{{ language }}</h3>
             </div>
-            <div class="tools bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px]" v-for="tool in job.tools" :key="tool">
+            <div class="tools bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] hover:text-white" v-for="tool in job.tools" :key="tool">
               <h3 class="text-right font-bold text-[#5ba4a4] mt-1">{{ tool }}</h3>
             </div>
           </div>
