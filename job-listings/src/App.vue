@@ -2,7 +2,7 @@
   <div class="min-h-screen mb-6">
     <div class="header bg-[#5ba4a4] m-0">
       <img src="@/assets/images/bg-header-desktop.svg" alt="header" class="hidden md:block">
-      <img src="@/assets/images/bg-header-mobile.svg" alt="header" class="block md:hidden">
+      <img src="@/assets/images/bg-header-mobile.svg" alt="header" class="block md:hidden w-full">
     </div>
 
     <!-- Search Box -->
@@ -11,7 +11,9 @@
         <div v-for="filter in selectedFilters" :key="filter" class="flex items-center bg-[#5ba4a4]/20 rounded-[4px] overflow-hidden">
           <span class="px-2 py-1 text-[#5ba4a4] font-bold">{{ filter }}</span>
           <button @click="removeFilter(filter)" class="h-full px-2 bg-[#5ba4a4] hover:bg-[#2c3a3a] transition-colors">
-            <span class="text-white font-bold">×</span>
+            <span class="text-white font-bold">
+              <img src="@/assets/images/icon-remove.svg" alt="remove icon" class="w-3 h-3">
+            </span>
           </button>
         </div>
       </div>
@@ -21,12 +23,12 @@
     <!-- Job Listings -->
     <div class="content flex flex-col">
       <div v-for="job in filteredJobs" :key="job.id"
-        class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-[4px] cursor-pointer"
+        class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] sm:w-[80%] w-[80%] bg-white gap-8 rounded-[4px] cursor-pointer"
         @click="toggleChoice(job.id)"
-        :style="{ borderLeft: selectedJobIds.includes(job.id) ? '4px solid #5ba4a4' : '4px solid transparent' }">
+        :style="{ borderLeft: selectedJobIds.includes(job.id) ? '5px solid #5ba4a4' : '5px solid transparent' }">
         
         <div class="logo">
-          <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3">
+          <img :src="getImagePath(job.logo)" alt="company logo" class="w-16 h-16 md:ml-3 sm:-mt-7 -mt-12 md:w-25 md:h-25 md:mt-0">
         </div>
 
         <div class="info flex flex-col md:flex-row flex-1 justify-between">
