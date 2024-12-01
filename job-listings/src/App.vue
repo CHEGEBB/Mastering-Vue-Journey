@@ -116,18 +116,14 @@ export default {
       });
     }
   },
-  mounted() {
-    const jobIds = Array.from({ length: 10 }, (_, i) => i);
-    Promise.all(
-      jobIds.map((id) =>
-        fetch(`http://localhost:3000/${id}`).then((response) => response.json())
-      )
-    )
-      .then((data) => {
-        this.jobs = data;
-      })
-      .catch((error) => console.error("Error fetching jobs:", error));
-  },
+ mounted() {
+  fetch('https://chegebb.github.io/Mastering-Vue-Journey/data.json')
+    .then(response => response.json())
+    .then(data => {
+      this.jobs = data;
+    })
+    .catch(error => console.error('Error fetching jobs:', error));
+},
   methods: {
     getImagePath(imageFileName) {
       return require(`@/assets/images/${imageFileName}`);
