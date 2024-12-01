@@ -1,12 +1,19 @@
 <template>
   <div class="min-h-screen mb-6">
+  
     <div class="header bg-[#5ba4a4] m-0">
       <img src="@/assets/images/bg-header-desktop.svg" alt="header" class="hidden md:block">
       <img src="@/assets/images/bg-header-mobile.svg" alt="header" class="block md:hidden">
     </div>
+    <div class="search md:w-[78%] sm:w-[70%] sm:h-20 w-[78%] h-20 bg-white md:h-16 relative mx-auto my-auto -top-8 flex  items-center rounded-[4px] shadow-xl flex-row justify-between p-4 " v-if="showSearches">
+      <div class="filtered-searches"></div>
+      <span>
+        <p class="font-bold text-[#5ba4a4] hover:underline hover:cursor-pointer">Clear</p>
+      </span>
+</div>
     <div class="content flex flex-col">
       <div v-for="job in jobs" :key="job.id"
-        class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-sm cursor-pointer "  @click="toggleChoice(job.id)"
+        class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-[4px] cursor-pointer "  @click="toggleChoice(job.id)"
   :style="{ borderLeft: selectedJobIds.includes(job.id) ? '4px solid #5ba4a4' : '4px solid transparent' }" >
         <div class="logo">
           <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3" />
@@ -39,7 +46,7 @@
           </div>
           <hr class="hidden sm:block md:hidden"/>
           <div class="entail flex flex-wrap items-center justify-end gap-2.5 ml-auto sm:flex sm:flex-wrap">
-            <div class="role bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4]">
+            <div class="role bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4]" @click="toggleShowSearchBox(job.role)">
               <h3 class="text-right font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ job.role }}</h3>
             </div>
             <div class="level bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] ">
@@ -65,6 +72,7 @@ export default {
     return {
       jobs: [],
       selectedJobIds: [],
+      showSearches: false,
     };
   },
   mounted() {
@@ -93,6 +101,9 @@ export default {
       this.selectedJobIds.splice(index, 1);
     }
   },
+  toggleShowSearchBox () {
+    this.showSearches = !this.showSearches;
+  }
   },
 };
 </script>
