@@ -1,33 +1,44 @@
 <template>
   <div class="min-h-screen mb-6">
-  
     <div class="header bg-[#5ba4a4] m-0">
       <img src="@/assets/images/bg-header-desktop.svg" alt="header" class="hidden md:block">
       <img src="@/assets/images/bg-header-mobile.svg" alt="header" class="block md:hidden">
     </div>
-    <div class="search md:w-[78%] sm:w-[70%] sm:h-20 w-[78%] h-20 bg-white md:h-16 relative mx-auto my-auto -top-8 flex  items-center rounded-[4px] shadow-xl flex-row justify-between p-4 " v-if="showSearches">
-      <div class="filtered-searches"></div>
-      <span>
-        <p class="font-bold text-[#5ba4a4] hover:underline hover:cursor-pointer">Clear</p>
-      </span>
-</div>
-    <div class="content flex flex-col">
-      <div v-for="job in jobs" :key="job.id"
-        class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-[4px] cursor-pointer "  @click="toggleChoice(job.id)"
-  :style="{ borderLeft: selectedJobIds.includes(job.id) ? '4px solid #5ba4a4' : '4px solid transparent' }" >
-        <div class="logo">
-          <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3" />
+
+    <!-- Search Box -->
+    <div v-if="showSearches" class="search md:w-[78%] sm:w-[70%] w-[78%] bg-white relative mx-auto -top-8 flex items-center rounded-[4px] shadow-xl p-4">
+      <div class="filtered-searches flex-1 flex flex-wrap gap-4">
+        <div v-for="filter in selectedFilters" :key="filter" class="flex items-center bg-[#5ba4a4]/20 rounded-[4px] overflow-hidden">
+          <span class="px-2 py-1 text-[#5ba4a4] font-bold">{{ filter }}</span>
+          <button @click="removeFilter(filter)" class="h-full px-2 bg-[#5ba4a4] hover:bg-[#2c3a3a] transition-colors">
+            <span class="text-white font-bold">×</span>
+          </button>
         </div>
-        <div class="info flex flex-row flex-1 justify-between">
-          <div class="details flex flex-col sm:flex sm:flex-col">
+      </div>
+      <button @click="clearFilters" class="font-bold text-[#5ba4a4] hover:underline ml-4">Clear</button>
+    </div>
+
+    <!-- Job Listings -->
+    <div class="content flex flex-col">
+      <div v-for="job in filteredJobs" :key="job.id"
+        class="job md:flex md:flex-row sm:flex flex-col mx-auto my-0 mt-10 shadow-lg p-5 md:w-[78%] bg-white gap-8 rounded-[4px] cursor-pointer"
+        @click="toggleChoice(job.id)"
+        :style="{ borderLeft: selectedJobIds.includes(job.id) ? '4px solid #5ba4a4' : '4px solid transparent' }">
+        
+        <div class="logo">
+          <img :src="getImagePath(job.logo)" alt="company logo" class="w-20 h-20 md:ml-3">
+        </div>
+
+        <div class="info flex flex-col md:flex-row flex-1 justify-between">
+          <div class="details flex flex-col">
             <div class="badges flex flex-row gap-3">
               <p class="font-bold text-[#5ba4a4]">{{ job.company }}</p>
-              <div class="new" v-if="job.new">
+              <div v-if="job.new" class="new">
                 <span class="badge bg-[#5ba4a4] w-12 h-5 rounded-2xl flex items-center justify-center">
                   <p class="text-white text-xs font-bold mt-1">NEW!</p>
                 </span>
               </div>
-              <div class="featured" v-if="job.featured">
+              <div v-if="job.featured" class="featured">
                 <span class="badge bg-[#2c3a3a] w-16 h-5 rounded-2xl flex items-center justify-center">
                   <p class="text-white text-xs font-bold mt-1">FEATURED</p>
                 </span>
@@ -44,19 +55,30 @@
               <p class="text-[#7b8e8e] font-[600]">{{ job.location }}</p>
             </div>
           </div>
-          <hr class="hidden sm:block md:hidden"/>
-          <div class="entail flex flex-wrap items-center justify-end gap-2.5 ml-auto sm:flex sm:flex-wrap">
-            <div class="role bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4]" @click="toggleShowSearchBox(job.role)">
-              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ job.role }}</h3>
+
+          <hr class="my-4 md:hidden">
+
+          <div class="entail flex flex-wrap items-center gap-2.5 md:ml-auto">
+            <div class="role bg-[#5ba4a4]/20 px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] cursor-pointer"
+                 @click.stop="addFilter(job.role)">
+              <h3 class="font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ job.role }}</h3>
             </div>
-            <div class="level bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] ">
-              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ job.level }}</h3>
+            
+            <div class="level bg-[#5ba4a4]/20 px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] cursor-pointer"
+                 @click.stop="addFilter(job.level)">
+              <h3 class="font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ job.level }}</h3>
             </div>
-            <div class="languages bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] " v-for="language in job.languages" :key="language">
-              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ language }}</h3>
+            
+            <div v-for="language in job.languages" :key="language"
+                 class="languages bg-[#5ba4a4]/20 px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] cursor-pointer"
+                 @click.stop="addFilter(language)">
+              <h3 class="font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ language }}</h3>
             </div>
-            <div class="tools bg-[#5ba4a4]/20 inline-block px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] " v-for="tool in job.tools" :key="tool">
-              <h3 class="text-right font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ tool }}</h3>
+            
+            <div v-for="tool in job.tools" :key="tool"
+                 class="tools bg-[#5ba4a4]/20 px-2 py-1 rounded-[6px] hover:bg-[#5ba4a4] cursor-pointer"
+                 @click.stop="addFilter(tool)">
+              <h3 class="font-bold text-[#5ba4a4] mt-1 hover:text-white">{{ tool }}</h3>
             </div>
           </div>
         </div>
@@ -73,7 +95,24 @@ export default {
       jobs: [],
       selectedJobIds: [],
       showSearches: false,
-    };
+      selectedFilters: [],
+    }
+  },
+  computed: {
+    filteredJobs() {
+      if (this.selectedFilters.length === 0) return this.jobs;
+      
+      return this.jobs.filter(job => {
+        return this.selectedFilters.every(filter => {
+          return [
+            job.role,
+            job.level,
+            ...(job.languages || []),
+            ...(job.tools || [])
+          ].includes(filter);
+        });
+      });
+    }
   },
   mounted() {
     const jobIds = Array.from({ length: 10 }, (_, i) => i);
@@ -91,21 +130,35 @@ export default {
     getImagePath(imageFileName) {
       return require(`@/assets/images/${imageFileName}`);
     },
-     toggleChoice(id) {
-    const index = this.selectedJobIds.indexOf(id);
-    if (index === -1) {
-      // If the job ID is not in the array, add it
-      this.selectedJobIds.push(id);
-    } else {
-      // If the job ID is already in the array, remove it
-      this.selectedJobIds.splice(index, 1);
+    toggleChoice(id) {
+      const index = this.selectedJobIds.indexOf(id);
+      if (index === -1) {
+        this.selectedJobIds.push(id);
+      } else {
+        this.selectedJobIds.splice(index, 1);
+      }
+    },
+    addFilter(filter) {
+      if (!this.selectedFilters.includes(filter)) {
+        this.selectedFilters.push(filter);
+        this.showSearches = true;
+      }
+    },
+    removeFilter(filter) {
+      const index = this.selectedFilters.indexOf(filter);
+      if (index !== -1) {
+        this.selectedFilters.splice(index, 1);
+      }
+      if (this.selectedFilters.length === 0) {
+        this.showSearches = false;
+      }
+    },
+    clearFilters() {
+      this.selectedFilters = [];
+      this.showSearches = false;
     }
-  },
-  toggleShowSearchBox () {
-    this.showSearches = !this.showSearches;
   }
-  },
-};
+}
 </script>
 
 <style lang="scss">
