@@ -18,7 +18,7 @@ Each challenge in this repository is designed to be functional, responsive, and 
 ## 2.Challenge 2: Job listings page: 👉👉( https://job-listings-olive.vercel.app/ )
 ![Design preview for the joblisting page coding challenge](./img/job.jpg)
 
-## 2.Challenge 2: tOdo-app:
+## 3.Challenge 2: tOdo-app:
 ![Design preview for the joblisting page coding challenge](./img/todo.jpg)
 
 ---
