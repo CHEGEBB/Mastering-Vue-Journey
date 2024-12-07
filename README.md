@@ -11,11 +11,11 @@ These projects highlight my journey of mastering Vue.js fundamentals like:
 - Vue Router and routing basics  
 
 Each challenge in this repository is designed to be functional, responsive, and visually appealing, showcasing my skills in frontend development.
-## 1.Challenge 1
+## 1.Challenge 1 : CrowdFunding page: 👉👉( https://crowdfunding-page-rust.vercel.app/ )
 ![Design preview for the Crowdfunding product page coding challenge](./img/desktop-preview.jpg)
 
 
-## 2.Challenge 2: Job listings page
+## 2.Challenge 2: Job listings page: 👉👉( https://job-listings-olive.vercel.app/ )
 ![Design preview for the joblisting page coding challenge](./img/job.jpg)
 
 ---
