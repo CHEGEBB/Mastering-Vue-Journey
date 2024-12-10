@@ -2,15 +2,21 @@
 
 <body>
 
-  Todo
-
-  <!-- Add dynamic number --> items left
+ 
+  <div class="header">
+     Todo
+  </div>
+  <div class="bottom-nav">
+     <!-- Add dynamic number --> items left
 
   All
   Active 
   Completed
 
   Clear Completed
+  </div>
+
+ 
 
   Drag and drop to reorder list
 </body>
