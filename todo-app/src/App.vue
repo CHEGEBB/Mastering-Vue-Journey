@@ -4,15 +4,28 @@
 
  
   <div class="header">
-     <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block">
+     <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block" v-show="isDarkTheme">
+     <img src="@/assets/images/bg-desktop-light.jpg" alt="header" class="hidden md:block" v-show="!isDarkTheme">
       <img src="@/assets/images/bg-mobile-dark.jpg" alt="header" class="block md:hidden w-full">
       <div class="logo">
              Todo
       </div>
-      <div class="theme-switcher">
-        <img src="@/assets/images/icon-sun.svg" alt="sun" class="hidden md:block " @click="toggleTheme" v-if="theme === dark">
-        <img src="@/assets/images/icon-moon.svg" alt="moon" class="block " v-if="theme === light">
-      </div>
+       <div class="theme-switcher">
+    <img
+      src="@/assets/images/icon-sun.svg"
+      alt="sun"
+      class="hidden md:block"
+      @click="toggleTheme"
+      v-show="isDarkTheme"
+    />
+    <img
+      src="@/assets/images/icon-moon.svg"
+      alt="moon"
+      class="block"
+      @click="toggleTheme"
+      v-show="!isDarkTheme"
+    />
+  </div>
   </div>
   <div class="bottom-nav">
      <!-- Add dynamic number --> items left
