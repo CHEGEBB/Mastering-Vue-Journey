@@ -29,6 +29,18 @@ $Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
 }
 body {
   font-family: 'Commissioner', sans-serif;
-  background-color: crimson;
   font-family:$font-josefin ;
+}
+
+[data-theme="dark"]{
+    background-color:$Very-Dark-Blue;
+    color: white;
+    transition: background-color 0.3s ease;
+    
+
+}
+[data-theme="light"]{
+    background-color:$Very-Light-Gray;
+    color: $Very-Dark-Grayish-Blue;
+    transition: background-color 0.3s ease;
 }

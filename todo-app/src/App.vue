@@ -1,12 +1,18 @@
 <template>
 
-<body>
+<div>
 
  
   <div class="header">
      <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block">
       <img src="@/assets/images/bg-mobile-dark.jpg" alt="header" class="block md:hidden w-full">
-     Todo
+      <div class="logo">
+             Todo
+      </div>
+      <div class="theme-switcher">
+        <img src="@/assets/images/icon-sun.svg" alt="sun" class="hidden md:block " @click="toggleTheme" v-if="theme === dark">
+        <img src="@/assets/images/icon-moon.svg" alt="moon" class="block " v-if="theme === light">
+      </div>
   </div>
   <div class="bottom-nav">
      <!-- Add dynamic number --> items left
@@ -21,7 +27,7 @@
  
 
   Drag and drop to reorder list
-</body>
+  </div>
 </template>
 
 <script lang="ts">
@@ -30,13 +36,38 @@ export default defineComponent({
   name: 'App',
   data(){
     return{
+      isDarkTheme:true,
     }
     
+  },
+  methods:{
+    toggleTheme(theme){
+      this.isDarkTheme =!this.isDarkTheme;
+      document.documentElement.setAttribute('data-theme', this.isDarkTheme? 'dark' : 'light');
+      
+    }
   },
   components: {
   }
 });
 </script>
 
+
 <style>
+
+:root {
+	--color-background-primary: #fff;
+	--color-background-secondary: #f5f5f5;
+	--color-accent: #2196f3;
+	--color-border: #e0e0e0;
+	--color-text-primary: #212121;
+}
+  
+[data-theme="dark"] {
+	--color-background-primary: #1a1e24;
+	--color-background-secondary: #121219;
+	--color-accent: #2196f3;
+	--color-border: #2e2e2e;
+	--color-text-primary: #fff;
+}
 </style>
