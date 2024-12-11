@@ -3,7 +3,7 @@
 <body>
 
  
-  <div class="header bg-slate-600">
+  <div class="header">
      <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block">
       <img src="@/assets/images/bg-mobile-dark.jpg" alt="header" class="block md:hidden w-full">
      Todo
@@ -39,12 +39,4 @@ export default defineComponent({
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
