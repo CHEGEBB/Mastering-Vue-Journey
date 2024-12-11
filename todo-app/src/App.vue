@@ -3,7 +3,9 @@
 <body>
 
  
-  <div class="header">
+  <div class="header bg-slate-600">
+     <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block">
+      <img src="@/assets/images/bg-mobile-dark.jpg" alt="header" class="block md:hidden w-full">
      Todo
   </div>
   <div class="bottom-nav">
@@ -26,6 +28,11 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'App',
+  data(){
+    return{
+    }
+    
+  },
   components: {
   }
 });
