@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-
-
+$font-josefin:'Josefin Sans', sans-serif;
 $Bright-Blue: hsl(220, 98%, 61%);
 $Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 // light theme
@@ -30,4 +30,5 @@ $Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
 body {
   font-family: 'Commissioner', sans-serif;
   background-color: crimson;
+  font-family:$font-josefin ;
 }
