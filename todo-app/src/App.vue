@@ -36,19 +36,41 @@
   <div class="todo-container top-[25%] absolute my-auto flex flex-col justify-between  w-[37%] md:align-center left-1/2  transform -translate-x-1/2 -translate-y-1/2">
     <div class="todo-input-container">
     <input type="text" v-model="newTodo" placeholder="Create a new todo..." class="w-[100%] pl-12 p-3 rounded-md border-none bg-[#25273c] focus:outline-none focus:ring-0 text-[#fafafa]">
-    <div 
-  class="w-6 h-6 border-2 border-gray-400 rounded-full cursor-pointer flex items-center justify-center"
-  @click="addTodo"
->
-  <img 
-    v-if="isChecked" 
-    src="@/assets/images/icon-check.svg" 
-    alt="checkmark" 
-    class="w-4 h-4"
+   <div
+    class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center absolute top-3 left-4 
+    hover:border-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]"
+    :class="{'bg-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]': isChecked}"
+    @click="toggleChecked"
   >
+    <img
+      v-if="isChecked"
+      src="@/assets/images/icon-check.svg"
+      alt="checkmark"
+      class="w-3 h-3"
+    />
 </div>
-  </div>
-  <div class="bottom-nav">
+<div class="todo-body bg-red-600 absolute top-[80px] w-[100%]">
+   <div v-for="todo in todo" :key="todo.id" class="todo-item">
+     <input type="checkbox" :checked="todo.completed" class="hidden" />
+     <div class="flex items-center">
+       <div class="todo-checkmark" :class="{'bg-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]': todo.completed}">
+         <img
+           v-if="todo.completed"
+           src="@/assets/images/icon-check.svg"
+           alt="checkmark"
+           class="w-3 h-3"
+         />
+       </div>
+       <div class="todo-content" :class="{'line-through': todo.completed}">{{ todo.content }}</div>
+     </div>
+     <div class="todo-delete" @click="removeTodo(todo)">
+       <img
+         src="@/assets/images/icon-cross.svg"
+         alt="trash"
+         class="w-4 h-4 ml-2"
+       />
+     </div>
+     <div class="bottom-nav">
      {{todo.length}} items left
 
   All
@@ -56,6 +78,9 @@
   Completed
 
   Clear Completed
+  </div>
+   </div>
+</div>
   </div>
   </div>
 
@@ -71,7 +96,7 @@ export default defineComponent({
   name: 'App',
   data(){
     return{
-      isDarkTheme:true,
+      isDarkTheme:false,
       isChecked:false,
       todo :[
         {
@@ -113,10 +138,12 @@ export default defineComponent({
         });
         this.newTodo = '';
       }
-            this.isChecked =!this.isChecked;
 
     },
-    
+    toggleChecked() {
+      this.isChecked = !this.isChecked;
+      this.addTodo(); 
+    },
   },
   components: {
   },
