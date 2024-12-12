@@ -63,12 +63,12 @@
             <div class="flex flex-row gap-6">
               <nav>
                 <ul class="  flex flex-row gap-3">
-                  <li class="font-bold">All</li>
-                  <li class="font-bold">Active</li>
-                  <li class="font-bold">Completed</li>
+                  <li class="font-bold cursor-pointer" :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">All</li>
+                  <li class="font-bold cursor-pointer " :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">Active</li>
+                  <li class="font-bold cursor-pointer" :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">Completed</li>
                 </ul>
               </nav>
-                              <span><ul> <li class="font-bold">Clear Completed</li></ul></span>
+                              <span><ul> <li class="font-bold cursor-pointer" :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">Clear Completed</li></ul></span>
 
             </div>
           </div>
