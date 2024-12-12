@@ -36,7 +36,17 @@
   <div class="todo-container top-[25%] absolute my-auto flex flex-col justify-between  w-[37%] md:align-center left-1/2  transform -translate-x-1/2 -translate-y-1/2">
     <div class="todo-input-container">
     <input type="text" v-model="newTodo" placeholder="Create a new todo..." class="w-[100%] pl-12 p-3 rounded-md border-none bg-[#25273c] focus:outline-none focus:ring-0 text-[#fafafa]">
-    <input type="radio" class="absolute left-4 top-4 " @change="addTodo">
+    <div 
+  class="w-6 h-6 border-2 border-gray-400 rounded-full cursor-pointer flex items-center justify-center"
+  @click="addTodo"
+>
+  <img 
+    v-if="isChecked" 
+    src="@/assets/images/icon-check.svg" 
+    alt="checkmark" 
+    class="w-4 h-4"
+  >
+</div>
   </div>
   <div class="bottom-nav">
      {{todo.length}} items left
@@ -62,6 +72,7 @@ export default defineComponent({
   data(){
     return{
       isDarkTheme:true,
+      isChecked:false,
       todo :[
         {
           content: 'Jog around the park 3x',
@@ -102,7 +113,10 @@ export default defineComponent({
         });
         this.newTodo = '';
       }
+            this.isChecked =!this.isChecked;
+
     },
+    
   },
   components: {
   },
