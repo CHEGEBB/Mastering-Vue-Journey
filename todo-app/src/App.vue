@@ -1,59 +1,97 @@
 <template>
-  <div class="min-h-[120vh] ">
-    <div class="header">
-      <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block" v-show="isDarkTheme">
-      <img src="@/assets/images/bg-desktop-light.jpg" alt="header" class="hidden md:block" v-show="!isDarkTheme">
-      <img src="@/assets/images/bg-mobile-dark.jpg" alt="header" class="block md:hidden w-full" v-show="!isDarkTheme">
-      <img src="@/assets/images/bg-mobile-light.jpg" alt="header" class="block md:hidden w-full" v-show="isDarkTheme">
-      <div class="top-[15%] absolute my-auto flex flex-row justify-between w-[37%] md:align-center left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <div class="logo">
+  <div class="min-h-screen" :class="isDarkTheme ? 'bg-[#25273c] text-[#fafafa]' : 'bg-white text-[#494C6B]'">
+    <div class="header relative">
+      <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block w-full h-[300px] object-cover" v-show="isDarkTheme">
+      <img src="@/assets/images/bg-desktop-light.jpg" alt="header" class="hidden md:block w-full h-[300px] object-cover" v-show="!isDarkTheme">
+      <img src="@/assets/images/bg-mobile-dark.jpg" alt="header" class="block md:hidden w-full h-[200px] object-cover" v-show="isDarkTheme">
+      <img src="@/assets/images/bg-mobile-light.jpg" alt="header" class="block md:hidden w-full h-[200px] object-cover" v-show="!isDarkTheme">
+      
+      <div class="absolute top-[70px] w-full max-w-[540px] mx-auto left-1/2 transform -translate-x-1/2 px-4">
+        <div class="flex justify-between items-center">
           <h1 class="uppercase text-3xl tracking-[12px] font-bold text-white">Todo</h1>
+          <button @click="toggleTheme">
+            <img src="@/assets/images/icon-sun.svg" alt="sun" v-show="isDarkTheme" />
+            <img src="@/assets/images/icon-moon.svg" alt="moon" v-show="!isDarkTheme" />
+          </button>
         </div>
-        <div class="theme-switcher">
-          <img src="@/assets/images/icon-sun.svg" alt="sun" class="hidden md:block sm:block" @click="toggleTheme" v-show="isDarkTheme" />
-          <img src="@/assets/images/icon-moon.svg" alt="moon" class="block sm:block" @click="toggleTheme" v-show="!isDarkTheme" />
-        </div>
-      </div>
-    </div>
-    <div class="todo-container top-[25%] absolute my-auto flex flex-col justify-between w-[37%] md:align-center left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <div class="todo-input-container relative">
-        <input type="text" v-model="newTodo" placeholder="Create a new todo..." class="w-[100%] pl-12 p-3 rounded-md border-none" :class="isDarkTheme ? 'bg-[#25273c] text-[#fafafa]' : 'bg-white text-[#494C6B]'" >
-        <div class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center absolute top-3 left-4 hover:border-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]" :class="{'bg-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]': isChecked}" @click="toggleChecked">
-          <img v-if="isChecked" src="@/assets/images/icon-check.svg" alt="checkmark" class="w-3 h-3" />
-        </div>
-        <div class="todo-body absolute top-[80px] w-[100%] rounded-md shadow-2xl text-lg" :class="isDarkTheme ? 'bg-[#25273c]' : 'bg-white'">
-          <div v-for="todo in todo" :key="todo.id" class="todo-item flex flex-row justify-between w-[100%] p-4 focus:outline-none focus:ring-0 relative" :class="[
-            isDarkTheme ? 'border-[#393a4c] text-[#fafafa]' : 'border-[#E3E4F1] text-[#494C6B]',
-            'border-b-[1px]'
-          ]">
-            <div class="flex items-center w-full">
-              <div class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center mr-4 hover:border-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]" :class="{'bg-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]': todo.completed}" @click="toggleTodoComplete(todo)">
-                <img v-if="todo.completed" src="@/assets/images/icon-check.svg" alt="checkmark" class="w-3 h-3" />
-              </div>
-              <div class="todo-content" :class="{'line-through': todo.completed}">{{ todo.content }}</div>
-            </div>
-            <div class="todo-delete" @click="removeTodo(todo)">
-              <img src="@/assets/images/icon-cross.svg" alt="trash" class="w-4 h-4 ml-2" />
-            </div>
-          </div>
-          <div class="bottom-nav p-4" :class="isDarkTheme ? 'text-[#5B5E7E]' : 'text-[#9495A5]'">
-            {{todo.length}} items left
-            All
-            Active 
-            Completed
-            Clear Completed
+
+        <!-- Todo Input -->
+        <div class="mt-8 relative">
+          <input 
+            type="text" 
+            v-model="newTodo" 
+            placeholder="Create a new todo..." 
+            class="w-full pl-12 p-4 rounded-md border-none"
+            :class="isDarkTheme ? 'bg-[#25273c] text-[#fafafa]' : 'bg-white text-[#494C6B]'"
+            @keyup.enter="addTodo"
+          >
+          <div 
+            class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center absolute top-4 left-4"
+            :class="{'bg-gradient-to-br from-[#57ddff] to-[#c058f3]': isChecked}"
+            @click="toggleChecked"
+          >
+            <img v-if="isChecked" src="@/assets/images/icon-check.svg" alt="checkmark" class="w-3 h-3" />
           </div>
         </div>
+
+        <!-- Todo List -->
+        <div class="mt-4 rounded-md shadow-xl overflow-hidden"
+          :class="isDarkTheme ? 'bg-[#25273c]' : 'bg-white'"
+        >
+          <div v-for="todo in todo" :key="todo.id" 
+            class="group flex items-center p-4 border-b"
+            :class="isDarkTheme ? 'border-[#393a4c] text-[#fafafa]' : 'border-[#E3E4F1] text-[#494C6B]'"
+          >
+            <div 
+              class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center mr-4"
+              :class="{'bg-gradient-to-br from-[#57ddff] to-[#c058f3]': todo.completed}"
+              @click="toggleTodoComplete(todo)"
+            >
+              <img v-if="todo.completed" src="@/assets/images/icon-check.svg" alt="checkmark" class="w-3 h-3" />
+            </div>
+            <span class="flex-1" :class="{'line-through opacity-50': todo.completed}">{{ todo.content }}</span>
+            <button @click="removeTodo(todo)" class="opacity-0 group-hover:opacity-100 transition-opacity">
+              <img src="@/assets/images/icon-cross.svg" alt="delete" class="w-4 h-4" />
+            </button>
+          </div>
+
+          <!-- List Footer -->
+          <div class="p-4 flex justify-between text-sm"
+            :class="isDarkTheme ? 'text-[#5B5E7E]' : 'text-[#9495A5]'"
+          >
+            <span>{{todo.length}} items left</span>
+            <div class="hidden md:flex gap-4">
+              <button>All</button>
+              <button>Active</button>
+              <button>Completed</button>
+            </div>
+            <button>Clear Completed</button>
+          </div>
+        </div>
+
+        <!-- Mobile Filters -->
+        <div class="md:hidden mt-4 p-4 rounded-md flex justify-center gap-4"
+          :class="isDarkTheme ? 'bg-[#25273c] text-[#5B5E7E]' : 'bg-white text-[#9495A5]'"
+        >
+          <button>All</button>
+          <button>Active</button>
+          <button>Completed</button>
+        </div>
+
+        <!-- Drag & Drop Text -->
+        <p class="text-center mt-12 mb-8"
+          :class="isDarkTheme ? 'text-[#5B5E7E]' : 'text-[#9495A5]'"
+        >
+          Drag and drop to reorder list
+        </p>
       </div>
-    </div>
-     <div class="bg-red-500 absolute bottom-0 mx-auto my-0  mt-5" :class="isDarkTheme ? 'text-[#fff]' : 'text-[#9495A5]'">
-      Drag and drop to reorder list
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+
 export default defineComponent({
   name: 'App',
   data() {
@@ -113,7 +151,6 @@ export default defineComponent({
     },
     toggleChecked() {
       this.isChecked = !this.isChecked;
-      this.addTodo();
     },
     toggleTodoComplete(todo) {
       todo.completed = !todo.completed;
