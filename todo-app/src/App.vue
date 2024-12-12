@@ -26,7 +26,7 @@
             @keyup.enter="addTodo"
           >
           <div 
-            class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center absolute top-4 left-4"
+            class="w-5 h-5 border-[1px] border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center absolute top-4 left-4"
             :class="{'bg-gradient-to-br from-[#57ddff] to-[#c058f3]': isChecked}"
             @click="toggleChecked"
           >
@@ -40,10 +40,10 @@
         >
           <div v-for="todo in todo" :key="todo.id" 
             class="group flex items-center p-4 border-b"
-            :class="isDarkTheme ? 'border-[#393a4c] text-[#fafafa]' : 'border-[#E3E4F1] text-[#494C6B]'"
+            :class="isDarkTheme ? 'border-[#393a4c] text-[#cacde8]' : 'border-[#E3E4F1] text-[#494C6B]'"
           >
             <div 
-              class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center mr-4"
+              class="w-5 h-5 border-[1px] border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center mr-4"
               :class="{'bg-gradient-to-br from-[#57ddff] to-[#c058f3]': todo.completed}"
               @click="toggleTodoComplete(todo)"
             >
@@ -63,12 +63,12 @@
             <div class="flex flex-row gap-6">
               <nav>
                 <ul class="  flex flex-row gap-3">
-                  <li>All</li>
-                  <li>Active</li>
-                  <li>Completed</li>
+                  <li class="font-bold">All</li>
+                  <li class="font-bold">Active</li>
+                  <li class="font-bold">Completed</li>
                 </ul>
               </nav>
-                              <span><ul> <li>Clear Completed</li></ul></span>
+                              <span><ul> <li class="font-bold">Clear Completed</li></ul></span>
 
             </div>
           </div>
