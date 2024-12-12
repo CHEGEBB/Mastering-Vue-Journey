@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-[120vh]">
+  <div class="min-h-[120vh] ">
     <div class="header">
       <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block" v-show="isDarkTheme">
       <img src="@/assets/images/bg-desktop-light.jpg" alt="header" class="hidden md:block" v-show="!isDarkTheme">
@@ -45,9 +45,9 @@
           </div>
         </div>
       </div>
-      <div class="text-center mt-8" :class="isDarkTheme ? 'text-[#3445]' : 'text-[#9495A5]'">
-      Drag and drop to reorder list
     </div>
+     <div class="bg-red-500 absolute bottom-0 mx-auto my-0  mt-5" :class="isDarkTheme ? 'text-[#fff]' : 'text-[#9495A5]'">
+      Drag and drop to reorder list
     </div>
   </div>
 </template>
