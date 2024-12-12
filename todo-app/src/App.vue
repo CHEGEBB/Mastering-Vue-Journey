@@ -21,7 +21,7 @@
             type="text" 
             v-model="newTodo" 
             placeholder="Create a new todo..." 
-            class="w-full pl-12 p-4 rounded-md border-none"
+            class="w-full pl-12 p-4 rounded-md border-none focus:outline-none focus:ring-0"
             :class="isDarkTheme ? 'bg-[#25273c] text-[#fafafa]' : 'bg-white text-[#494C6B]'"
             @keyup.enter="addTodo"
           >
