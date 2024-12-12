@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="min-h-screen">
     <div class="header">
       <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block" v-show="isDarkTheme">
       <img src="@/assets/images/bg-desktop-light.jpg" alt="header" class="hidden md:block" v-show="!isDarkTheme">
@@ -21,7 +21,7 @@
         <div class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center absolute top-3 left-4 hover:border-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]" :class="{'bg-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]': isChecked}" @click="toggleChecked">
           <img v-if="isChecked" src="@/assets/images/icon-check.svg" alt="checkmark" class="w-3 h-3" />
         </div>
-        <div class="todo-body absolute top-[80px] w-[100%] rounded-md" :class="isDarkTheme ? 'bg-[#25273c]' : 'bg-white'">
+        <div class="todo-body absolute top-[80px] w-[100%] rounded-md shadow-2xl" :class="isDarkTheme ? 'bg-[#25273c]' : 'bg-white'">
           <div v-for="todo in todo" :key="todo.id" class="todo-item flex flex-row justify-between w-[100%] p-4 focus:outline-none focus:ring-0 relative" :class="[
             isDarkTheme ? 'border-[#393a4c] text-[#fafafa]' : 'border-[#E3E4F1] text-[#494C6B]',
             'border-b-[1px]'
