@@ -17,12 +17,15 @@
     </div>
     <div class="todo-container top-[25%] absolute my-auto flex flex-col justify-between w-[37%] md:align-center left-1/2 transform -translate-x-1/2 -translate-y-1/2">
       <div class="todo-input-container relative">
-        <input type="text" v-model="newTodo" placeholder="Create a new todo..." class="w-[100%] pl-12 p-3 rounded-md border-none bg-[#25273c] focus:outline-none focus:ring-0 text-[#fafafa]">
+        <input type="text" v-model="newTodo" placeholder="Create a new todo..." class="w-[100%] pl-12 p-3 rounded-md border-none" :class="isDarkTheme ? 'bg-[#25273c] text-[#fafafa]' : 'bg-white text-[#494C6B]'" >
         <div class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center absolute top-3 left-4 hover:border-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]" :class="{'bg-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]': isChecked}" @click="toggleChecked">
           <img v-if="isChecked" src="@/assets/images/icon-check.svg" alt="checkmark" class="w-3 h-3" />
         </div>
-        <div class="todo-body bg-[#25273c] absolute top-[80px] w-[100%] rounded-md">
-          <div v-for="todo in todo" :key="todo.id" class="todo-item flex flex-row justify-between w-[100%] p-4 border-b-[1px] border-[#393a4c] focus:outline-none focus:ring-0 text-[#fafafa] relative">
+        <div class="todo-body absolute top-[80px] w-[100%] rounded-md" :class="isDarkTheme ? 'bg-[#25273c]' : 'bg-white'">
+          <div v-for="todo in todo" :key="todo.id" class="todo-item flex flex-row justify-between w-[100%] p-4 focus:outline-none focus:ring-0 relative" :class="[
+            isDarkTheme ? 'border-[#393a4c] text-[#fafafa]' : 'border-[#E3E4F1] text-[#494C6B]',
+            'border-b-[1px]'
+          ]">
             <div class="flex items-center w-full">
               <div class="w-5 h-5 border-2 border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center mr-4 hover:border-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]" :class="{'bg-[linear-gradient(hsl(192,_100%,_67%),_hsl(280,_87%,_65%))]': todo.completed}" @click="toggleTodoComplete(todo)">
                 <img v-if="todo.completed" src="@/assets/images/icon-check.svg" alt="checkmark" class="w-3 h-3" />
@@ -33,7 +36,7 @@
               <img src="@/assets/images/icon-cross.svg" alt="trash" class="w-4 h-4 ml-2" />
             </div>
           </div>
-          <div class="bottom-nav p-4">
+          <div class="bottom-nav p-4" :class="isDarkTheme ? 'text-[#5B5E7E]' : 'text-[#9495A5]'">
             {{todo.length}} items left
             All
             Active 
@@ -43,7 +46,9 @@
         </div>
       </div>
     </div>
-    Drag and drop to reorder list
+    <div class="text-center mt-8" :class="isDarkTheme ? 'text-[#5B5E7E]' : 'text-[#9495A5]'">
+      Drag and drop to reorder list
+    </div>
   </div>
 </template>
 
