@@ -33,7 +33,11 @@
   </div>
   </div>
   </div>
-  <div class="todo-container">
+  <div class="todo-container top-[25%] absolute my-auto flex flex-col justify-between  w-[37%] md:align-center left-1/2  transform -translate-x-1/2 -translate-y-1/2">
+    <div class="todo-input-container">
+    <input type="text" v-model="newTodo" placeholder="Create a new todo..." class="w-[100%] pl-12 p-3 rounded-md">
+    <input type="radio" class="absolute left-4 top-4 " @change="addTodo">
+  </div>
   <div class="bottom-nav">
      {{todo.length}} items left
 
@@ -88,7 +92,16 @@ export default defineComponent({
       this.isDarkTheme =!this.isDarkTheme;
       document.documentElement.setAttribute('data-theme', this.isDarkTheme? 'dark' : 'light');
       
-    }
+    },
+    addTodo(item){
+      if(this.newTodo){
+        this.todo.push({
+          content: this.newTodo,
+          id: this.todo.length + 1,
+        });
+        this.newTodo = '';
+      }
+    },
   },
   components: {
   }
