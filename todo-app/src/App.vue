@@ -33,14 +33,16 @@
   </div>
   </div>
   </div>
+  <div class="todo-container">
   <div class="bottom-nav">
-     <!-- Add dynamic number --> items left
+     {{todo.length}} items left
 
   All
   Active 
   Completed
 
   Clear Completed
+  </div>
   </div>
 
  
