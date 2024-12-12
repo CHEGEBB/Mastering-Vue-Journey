@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen" :class="isDarkTheme ? 'bg-[#25273c] text-[#fafafa]' : 'bg-white text-[#494C6B]'">
+  <div class="min-h-screen" :class="isDarkTheme ? 'bg-[#161722] text-[#fafafa]' : 'bg-white text-[#494C6B]'">
     <div class="header relative">
       <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block w-full h-[300px] object-cover" v-show="isDarkTheme">
       <img src="@/assets/images/bg-desktop-light.jpg" alt="header" class="hidden md:block w-full h-[300px] object-cover" v-show="!isDarkTheme">
@@ -60,12 +60,17 @@
             :class="isDarkTheme ? 'text-[#5B5E7E]' : 'text-[#9495A5]'"
           >
             <span>{{todo.length}} items left</span>
-            <div class="hidden md:flex gap-4">
-              <button>All</button>
-              <button>Active</button>
-              <button>Completed</button>
+            <div class="flex flex-row gap-6">
+              <nav>
+                <ul class="  flex flex-row gap-3">
+                  <li>All</li>
+                  <li>Active</li>
+                  <li>Completed</li>
+                </ul>
+              </nav>
+                              <span><ul> <li>Clear Completed</li></ul></span>
+
             </div>
-            <button>Clear Completed</button>
           </div>
         </div>
 
