@@ -38,22 +38,31 @@
         <div class="mt-4 rounded-md shadow-xl overflow-hidden"
           :class="isDarkTheme ? 'bg-[#25273c]' : 'bg-white'"
         >
-          <div v-for="todo in todo" :key="todo.id" 
-            class="group flex items-center p-4 border-b"
-            :class="isDarkTheme ? 'border-[#393a4c] text-[#cacde8]' : 'border-[#E3E4F1] text-[#494C6B]'"
+          <draggable 
+            v-model="todo"
+            :animation="200"
+            item-key="id"
+            class="todo-list"
           >
-            <div 
-              class="w-5 h-5 border-[1px] border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center mr-4"
-              :class="{'bg-gradient-to-br from-[#57ddff] to-[#c058f3]': todo.completed}"
-              @click="toggleTodoComplete(todo)"
-            >
-              <img v-if="todo.completed" src="@/assets/images/icon-check.svg" alt="checkmark" class="w-3 h-3" />
-            </div>
-            <span class="flex-1" :class="{'line-through opacity-50': todo.completed}">{{ todo.content }}</span>
-            <button @click="removeTodo(todo)" class="opacity-0 group-hover:opacity-100 transition-opacity">
-              <img src="@/assets/images/icon-cross.svg" alt="delete" class="w-4 h-4" />
-            </button>
-          </div>
+            <template #item="{element: todo}">
+              <div 
+                class="group flex items-center p-4 border-b cursor-move"
+                :class="isDarkTheme ? 'border-[#393a4c] text-[#cacde8]' : 'border-[#E3E4F1] text-[#494C6B]'"
+              >
+                <div 
+                  class="w-5 h-5 border-[1px] border-[#4d5066] rounded-full cursor-pointer flex items-center justify-center mr-4"
+                  :class="{'bg-gradient-to-br from-[#57ddff] to-[#c058f3]': todo.completed}"
+                  @click="toggleTodoComplete(todo)"
+                >
+                  <img v-if="todo.completed" src="@/assets/images/icon-check.svg" alt="checkmark" class="w-3 h-3" />
+                </div>
+                <span class="flex-1" :class="{'line-through opacity-50': todo.completed}">{{ todo.content }}</span>
+                <button @click="removeTodo(todo)" class="opacity-0 group-hover:opacity-100 transition-opacity">
+                  <img src="@/assets/images/icon-cross.svg" alt="delete" class="w-4 h-4" />
+                </button>
+              </div>
+            </template>
+          </draggable>
 
           <!-- List Footer -->
           <div class="p-4 flex justify-between text-sm"
@@ -62,14 +71,17 @@
             <span>{{todo.length}} items left</span>
             <div class="flex flex-row gap-6">
               <nav>
-                <ul class="  flex flex-row gap-3">
+                <ul class="flex flex-row gap-3">
                   <li class="font-bold cursor-pointer" :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">All</li>
-                  <li class="font-bold cursor-pointer " :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">Active</li>
+                  <li class="font-bold cursor-pointer" :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">Active</li>
                   <li class="font-bold cursor-pointer" :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">Completed</li>
                 </ul>
               </nav>
-                              <span><ul> <li class="font-bold cursor-pointer" :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">Clear Completed</li></ul></span>
-
+              <span>
+                <ul>
+                  <li class="font-bold cursor-pointer" :class="isDarkTheme ? 'hover:text-[#e4e5f1]': 'hover:text-[#d2d3db]'">Clear Completed</li>
+                </ul>
+              </span>
             </div>
           </div>
         </div>
@@ -96,9 +108,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import draggable from 'vuedraggable';
 
 export default defineComponent({
   name: 'App',
+  components: {
+    draggable
+  },
   data() {
     return {
       isDarkTheme: false,
@@ -185,5 +201,9 @@ export default defineComponent({
   --color-accent: #2196f3;
   --color-border: #2e2e2e;
   --color-text-primary: #fff;
+}
+
+.todo-list > * {
+  cursor: move;
 }
 </style>
