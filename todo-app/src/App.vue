@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-full" :class="isDarkTheme ? 'bg-[#161722] text-[#fafafa] min-h-[120vh]' : 'bg-white text-[#494C6B]'">
+  <div class="min-h-screen w-full" :class="isDarkTheme ? 'bg-[#161722] text-[#fafafa] min-h-[150vh]' : 'bg-white text-[#494C6B]'">
     <div class="header relative w-full">
       <!-- Header images remain the same -->
       <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block w-full h-[200px] lg:h-[300px] object-cover" v-show="isDarkTheme">
