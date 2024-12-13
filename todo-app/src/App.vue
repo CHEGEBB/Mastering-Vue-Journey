@@ -204,6 +204,6 @@ export default defineComponent({
 }
 
 .todo-list > * {
-  cursor: move;
+  cursor:move;
 }
 </style>
