@@ -30,6 +30,7 @@ $Very-Dark-Grayish-Blue: #393a4c;
 body {
   font-family: 'Commissioner', sans-serif;
   font-family:$font-josefin ;
+  background-color:$Very-Dark-Blue;
   
 }
 
@@ -37,7 +38,7 @@ body {
     background-color:$Very-Dark-Blue;
     color: white;
     transition: background-color 0.3s ease;
-    min-height: 150vh;
+    
     
 
 }

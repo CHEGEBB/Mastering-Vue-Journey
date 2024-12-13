@@ -150,7 +150,7 @@
 
         <!-- Drag & Drop Text -->
         <p class="text-center mt-8 sm:mt-12 mb-6 sm:mb-8 text-sm"
-          :class="isDarkTheme ? 'text-[#5B5E7E]' : 'text-[#9495A5]'"
+          :class="isDarkTheme ? ' text-[#5B5E7E]' : 'text-[#9495A5]'"
         >
           Drag and drop to reorder list
         </p>
