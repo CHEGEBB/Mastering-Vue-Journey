@@ -1,14 +1,12 @@
 <template>
   <div class="min-h-screen w-full" :class="isDarkTheme ? 'bg-[#161722] text-[#fafafa] min-h-[150vh]' : 'bg-white text-[#494C6B]'">
     <div class="header relative w-full">
-      <!-- Header images remain the same -->
       <img src="@/assets/images/bg-desktop-dark.jpg" alt="header" class="hidden md:block w-full h-[200px] lg:h-[300px] object-cover" v-show="isDarkTheme">
       <img src="@/assets/images/bg-desktop-light.jpg" alt="header" class="hidden md:block w-full h-[200px] lg:h-[300px] object-cover" v-show="!isDarkTheme">
       <img src="@/assets/images/bg-mobile-dark.jpg" alt="header" class="block md:hidden w-full h-[150px] sm:h-[200px] object-cover" v-show="isDarkTheme">
       <img src="@/assets/images/bg-mobile-light.jpg" alt="header" class="block md:hidden w-full h-[150px] sm:h-[200px] object-cover" v-show="!isDarkTheme">
       
       <div class="absolute top-[50px] sm:top-[70px] w-[90%] sm:w-[80%] md:w-[70%] max-w-[540px] mx-auto left-1/2 transform -translate-x-1/2 px-4">
-        <!-- Title and theme toggle remain the same -->
         <div class="flex justify-between items-center">
           <h1 class="uppercase text-2xl sm:text-3xl tracking-[8px] sm:tracking-[12px] font-bold text-white">Todo</h1>
           <button @click="toggleTheme" class="w-6 h-6 sm:w-8 sm:h-8">
@@ -17,7 +15,6 @@
           </button>
         </div>
 
-        <!-- Todo Input remains the same -->
         <div class="mt-6 sm:mt-8 relative">
           <input 
             type="text" 
@@ -36,7 +33,6 @@
           </div>
         </div>
 
-        <!-- Todo List Container -->
         <div class="mt-4 rounded-md shadow-xl overflow-hidden text-sm sm:text-base"
           :class="isDarkTheme ? 'bg-[#25273c]' : 'bg-white'"
         >
@@ -67,12 +63,10 @@
             </template>
           </draggable>
 
-          <!-- List Footer (without nav on mobile) -->
           <div class="p-4 flex justify-between items-center text-xs sm:text-sm"
             :class="isDarkTheme ? 'text-[#5B5E7E]' : 'text-[#9495A5]'"
           >
             <span>{{activeTodosCount}} items left</span>
-            <!-- Nav visible only on desktop -->
             <div class="hidden sm:block">
               <nav>
                 <ul class="flex justify-center flex-row gap-3">
@@ -113,7 +107,6 @@
           </div>
         </div>
 
-        <!-- Mobile Navigation (outside todo container) -->
         <div 
           class="sm:hidden mt-4 p-4 rounded-md shadow-xl w-full text-sm"
           :class="isDarkTheme ? 'bg-[#25273c] text-[#5B5E7E]' : 'bg-white text-[#9495A5]'"
@@ -148,7 +141,6 @@
           </nav>
         </div>
 
-        <!-- Drag & Drop Text -->
         <p class="text-center mt-8 sm:mt-12 mb-6 sm:mb-8 text-sm"
           :class="isDarkTheme ? ' text-[#5B5E7E]' : 'text-[#9495A5]'"
         >
