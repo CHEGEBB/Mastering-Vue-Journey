@@ -2,7 +2,7 @@
 <div class="main-container bg-white">
   <div class="hero flex flex-row w-[100vw]">
     <div class="left flex  relative z-[0]">
-      <img :src=Images[0] alt="hero image" class="md:w-[80vw]"/>
+      <img :src=Images[currentIndex] alt="hero image" class="md:w-[80vw]" v-show="scrollInterval"/>
     <div class="nav flex flex-row absolute z-10 left-5 top-5  gap-5">
       <div class="logo">
         <img :src=Logo alt="logo"  class="justify-center items-center mt-1"/>
@@ -16,17 +16,27 @@
 
     </div>
     </div>
-    <div class="right w-[60%] justify-center items-center m-12 ">
-      <h1 class="text-4xl font-bold md:w-[370px]">
-        Discover innovative ways to decorate
+    <div class="scroll bg-black md:w-[200px] md:h-[60px] relative md:mt-[450px] ">
+      <div class="scroll-content flex flex-row justify-between items-center">
+        <div class="scroll-back">
+          <img :src=Previous alt="arrow left" class="p-4" @click="previousImage"/>
+        </div>
+        <div class="scroll-next">
+          <img :src=Next alt="arrow right" class="p-4" @click="nextImage" />
+        </div>
+
+      </div>
+
+    </div>
+    <div class="right w-[50%] justify-center items-center m-12 ">
+      <h1 class="text-5xl font-bold md:w-[450px]">
+       {{words[currentIndex].title}}
       </h1>
       <p class="text-[16px] font-semibold text-[#a1a1a1] md:w-[440px]">
-        We provide unmatched quality, comfort, and style for property owners across the country. 
-  Our experts combine form and function in bringing your vision to life. Create a room in your 
-  own style with our collection and make your property a reflection of you and what you love.
+        {{words[currentIndex].content}}
       </p>
 
-      <span class="uppercase tracking-[12px] flex flex-row gap-3 font-bold text-[#454545] mt-7">
+      <span class="uppercase tracking-[12px] flex flex-row gap-3 font-bold text-[#454545] mt-7 text-left">
         Shop now <span class="mt-1">
           <img :src=ArrowRight alt="arrow right" class=""/>
         </span>
@@ -36,22 +46,6 @@
     </div>
 
   </div>
-
-  We are available all across the globe
-
-  With stores all over the world, it's easy for you to find furniture for your home or place of business. 
-  Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
-  store locator. Any questions? Don't hesitate to contact us today.
-
-  Shop now
-
-  Manufactured with the best materials
-
-  Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
-  to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-  experience in this industry, we understand what customers want for their home and office.
-
-  Shop now
 
   About our furniture
 
@@ -69,6 +63,8 @@ import Image1 from './assets/images/desktop-image-hero-1.jpg';
 import Image2 from './assets/images/desktop-image-hero-2.jpg';
 import Image3 from './assets/images/desktop-image-hero-3.jpg';
 import ArrowRight from './assets/images/icon-arrow.svg';
+import Previous from './assets/images/icon-angle-left.svg';
+import Next from './assets/images/icon-angle-right.svg';
 export default {
   name: 'App',
   data() {
@@ -76,9 +72,38 @@ export default {
       Logo: Logo,
       Images: [Image1, Image2, Image3],
       ArrowRight: ArrowRight,
+      Previous: Previous,
+      Next: Next,
+      scrollInterval: [0],
+      currentIndex: 0,
+      words :[{
+        title: 'Discover innovative ways to decorate',
+        content: 'We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.',
+        shopNow: 'Shop now',
+
+      },
+      {
+        title: 'We are available all across the globe',
+        content: 'With stores all over the world, it\'s easy for you to find furniture for your home or place of business. Locally, we’re in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don\'t hesitate to contact us today.',
+        shopNow: 'Shop now',
+      },
+      {
+        title: 'Manufactured with the best materials',
+        content: 'Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.',
+        shopNow: 'Shop now',
+      }
+      ]
     }
   },
   components: {
+  },
+  methods:{
+    nextImage() {
+          this.currentIndex = (this.currentIndex + 1) % this.Images.length;
+    },
+    previousImage() {
+      this.currentIndex= (this.currentIndex - 1 && this.currentIndex >=0) % this.Images.length;
+    },
   },
 }
 </script>
@@ -96,5 +121,10 @@ export default {
 .nav-links{
   display: flex;
   justify-content: space-between;
+}
+.right{
+  text-align: left;
+  padding: 60px 50px;
+  margin-left: -50px !important;
 }
 </style>
