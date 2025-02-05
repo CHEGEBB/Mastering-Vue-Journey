@@ -21,7 +21,7 @@ Each challenge in this repository is designed to be functional, responsive, and 
 ## 3.Challenge 2: tOdo-app:👉👉( https://todo-app-olive-theta.vercel.app/)
 ![Design preview for the joblisting page coding challenge](./img/todo.jpg)
 
-## 4.Challenge 2: Room-Homepage-master:👉👉( https://todo-app-olive-theta.vercel.app/)
+## 4.Challenge 2: Room-Homepage-master:👉👉( https://room-homepage-master-iota.vercel.app/)
 ![Design preview for the joblisting page coding challenge](./img/desktop-design-slide-1.jpg)
 
 ---
