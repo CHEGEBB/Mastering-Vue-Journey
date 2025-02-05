@@ -3,10 +3,10 @@
     <div class="hero relative w-full min-h-[550px] sm:min-h-[450px] overflow-hidden">
       <div v-if="isMenuOpen" class="fixed inset-0 bg-black bg-opacity-70 z-50">
         <div class="bg-white p-8 mt-20 mx-6">
-          <div class="flex justify-end mb-6">
+          <div class="flex flex-row justify-end mb-6">
             <button @click="toggleMenu" class="text-2xl">&times;</button>
           </div>
-          <nav class="flex flex-col space-y-6">
+          <nav class=" flex flex-row space-y-6 justify-between items-center -mt-[50px]">
             <a href="#" class="text-xl font-medium">home</a>
             <a href="#" class="text-xl font-medium">shop</a>
             <a href="#" class="text-xl font-medium">about</a>
@@ -46,11 +46,11 @@
               @click="previousImage" 
               class="p-6 hover:bg-gray-800 transition-colors"
             >
-              <img :src="Previous" alt="Previous" />
+              <img :src="Previous" alt="Previous"/>
             </button>
             <button 
               @click="nextImage" 
-              class="p-6 hover:bg-gray-800 transition-colors "
+              class="p-6 hover:bg-gray-800 transition-colors  lg:ml-12"
             >
               <img :src="Next" alt="Next" />
             </button>
