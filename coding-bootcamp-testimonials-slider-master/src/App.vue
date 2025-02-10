@@ -1,13 +1,14 @@
 <template>
 <div class="main-container lg:flex lg:flex-row  w-full flex flex-row">
-  <div class="left-section-container lg:flex lg:flex-col ">
-    <h2 class="flex absolute z-50">{{user[0].text}}</h2>
-    <img :src="PatternQuotes" alt="Pattern Quotes" class="pattern-quotes lg:h-[150px] lg:w-[50px]" />
-    <img :src="PatternCurve" alt="Pattern Curve" class="pattern-curve  flex " />
+  <div class="left-section-container lg:flex lg:flex-col lg:w-[600px] lg:h-[300px]  bg-red-500">
+    <h2 class=" absolute z-50 lg:w-[600px]">{{user[0].text}}</h2>
+    <img :src="PatternQuotes" alt="Pattern Quotes" class="pattern-quotes lg:h-[70px] lg:w-[100px]" />
   </div>
-  <div class="right-section-container">
-    <img :src=user[0].image  alt="User Image" class="user-image absolute z-10 w-full lg:w-[450px] lg:h-[450px] top-[10.5%] right-[16%]" />
-    <img :src="PatternBg" alt="Pattern Background" class="pattern-bg absolute z-0 lg:w-[45%] lg:h-[90%] top-[2%]" />
+      <img :src="PatternCurve" alt="Pattern Curve" class="pattern-curve absolute bottom-0 left-0 " />
+
+  <div class="right-section-container ">
+    <img :src=user[0].image  alt="User Image" class="user-image absolute z-10 w-full lg:w-[450px] lg:h-[450px] top-[10.5%] right-[10%] rounded-[6px]" />
+    <img :src="PatternBg" alt="Pattern Background" class="pattern-bg absolute z-0 lg:w-[45%] lg:h-[90%] top-[2%] right-14" />
   </div> 
 </div>
 </template>
