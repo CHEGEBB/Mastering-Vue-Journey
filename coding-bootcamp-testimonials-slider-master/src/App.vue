@@ -1,14 +1,14 @@
 <template>
-<div class="main-container lg:flex lg:flex-row">
+<div class="main-container lg:flex lg:flex-row  w-full flex flex-row">
   <div class="left-section-container lg:flex lg:flex-col ">
-    <h2>{{user[0].text}}</h2>
-    <img :src="PatternQuotes" alt="Pattern Quotes" class="pattern-quotes" />
-    <img :src="PatternCurve" alt="Pattern Curve" class="pattern-curve" />
+    <h2 class="flex absolute z-50">{{user[0].text}}</h2>
+    <img :src="PatternQuotes" alt="Pattern Quotes" class="pattern-quotes lg:h-[150px] lg:w-[50px]" />
+    <img :src="PatternCurve" alt="Pattern Curve" class="pattern-curve  flex " />
   </div>
   <div class="right-section-container">
-    <img :src=user[0].image  alt="User Image" class="user-image" />
-    <img :src="PatternBg" alt="Pattern Background" class="pattern-bg" />
-  </div>
+    <img :src=user[0].image  alt="User Image" class="user-image absolute z-10 w-full lg:w-[450px] lg:h-[450px] top-[10.5%] right-[16%]" />
+    <img :src="PatternBg" alt="Pattern Background" class="pattern-bg absolute z-0 lg:w-[45%] lg:h-[90%] top-[2%]" />
+  </div> 
 </div>
 </template>
 
@@ -51,7 +51,10 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 #app {
+  font-family: 'Inter', sans-serif;
   
 }
 </style>
