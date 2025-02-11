@@ -1,15 +1,20 @@
 <template>
 <div class="main-container lg:flex lg:flex-row  w-full flex flex-row">
-  <div class="left-section-container lg:flex lg:flex-col lg:w-[600px] lg:h-[300px]  bg-red-500">
-    <h2 class=" absolute z-50 lg:w-[600px]">{{user[0].text}}</h2>
-    <img :src="PatternQuotes" alt="Pattern Quotes" class="pattern-quotes lg:h-[70px] lg:w-[100px]" />
+  <div class="left-section-container lg:flex lg:flex-col lg:w-[600px] lg:h-[400px] absolute lg:top-[30%] lg:left-[19.9%]">
+    <h2 class=" absolute z-50 lg:w-[550px] text-[30px] font-light text-[#202046]">"{{user[userIndex].text}}"</h2>
+    <p class="absolute z-50 lg:bottom-32 font-bold text-[#202046] ">{{user[userIndex].name}} <span class="font-semibold text-[#babacf]">{{user[0].position}}</span></p>
+    <img :src="PatternQuotes" alt="Pattern Quotes" class="pattern-quotes lg:h-[78px] lg:w-[107px] lg:-mt-10 lg:ml-20" />
   </div>
       <img :src="PatternCurve" alt="Pattern Curve" class="pattern-curve absolute bottom-0 left-0 " />
 
   <div class="right-section-container ">
-    <img :src=user[0].image  alt="User Image" class="user-image absolute z-10 w-full lg:w-[450px] lg:h-[450px] top-[10.5%] right-[10%] rounded-[6px]" />
-    <img :src="PatternBg" alt="Pattern Background" class="pattern-bg absolute z-0 lg:w-[45%] lg:h-[90%] top-[2%] right-14" />
+    <img :src=user[userIndex].image  alt="User Image" class="user-image absolute shadow-2xl z-10 w-full lg:w-[450px] lg:h-[450px] top-[10.5%] right-[12%] rounded-[6px]" />
+    <img :src="PatternBg" alt="Pattern Background" class="pattern-bg absolute z-0 lg:w-[45%] lg:h-[90%] top-[2%] right-[6%]" />
   </div> 
+  <div class="navigation bg-white absolute right-[34.2%] bottom-[10%] z-40 flex flex-row  gap-[42px] shadow-xl lg:w-[100px] lg:h-[50px] rounded-[24px] p-4">
+    <img :src=IconPrev alt="prev" class="w-[15px] h-[20px]" @click="nextUser"/>
+    <img :src=IconNext alt="next" class="w-[15px] h-[20px]" @click="prevUser"/>
+  </div>
 </div>
 </template>
 
@@ -43,7 +48,21 @@ export default {
           position: 'Junior Front-end Developer',
           text: 'If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer.'
         }
-      ]
+      ],
+      userIndex: 0,
+      
+    }
+  },
+  methods:{
+    nextUser(){
+      if(this.userIndex < this.user.length - 1){
+        this.userIndex++
+      }
+    },
+    prevUser(){
+      if(this.userIndex > 0){
+        this.userIndex--
+      }
     }
   },
   components: {
