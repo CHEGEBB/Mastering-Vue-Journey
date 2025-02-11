@@ -1,7 +1,7 @@
 <template>
-<div class="main-container lg:flex lg:flex-row  w-full flex flex-row">
+<div class="main-container  sm:flex sm:flex-col md:flex md:flex-col lg:flex lg:flex-row  w-full ">
   <div class="left-section-container lg:flex lg:flex-col lg:w-[600px] lg:h-[400px] absolute lg:top-[30%] lg:left-[19.9%]">
-    <h2 class=" absolute z-50 lg:w-[550px] text-[30px] font-light text-[#202046]">"{{user[userIndex].text}}"</h2>
+    <h2 class=" absolute  z-50 lg:w-[550px] text-[30px] font-light text-[#202046]">"{{user[userIndex].text}}"</h2>
     <p class="absolute z-50 lg:bottom-32 font-bold text-[#202046] ">{{user[userIndex].name}} <span class="font-semibold text-[#babacf]">{{user[0].position}}</span></p>
     <img :src="PatternQuotes" alt="Pattern Quotes" class="pattern-quotes lg:h-[78px] lg:w-[107px] lg:-mt-10 lg:ml-20" />
   </div>
@@ -54,15 +54,13 @@ export default {
     }
   },
   methods:{
-    nextUser(){
-      if(this.userIndex < this.user.length - 1){
-        this.userIndex++
-      }
+     nextUser() {
+      this.userIndex = (this.userIndex + 1) % this.user.length;
     },
-    prevUser(){
-      if(this.userIndex > 0){
-        this.userIndex--
-      }
+    prevUser() {
+      this.userIndex = this.userIndex === 0 
+        ? this.user.length - 1 
+        : this.userIndex - 1;
     }
   },
   components: {
