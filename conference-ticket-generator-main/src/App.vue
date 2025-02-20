@@ -30,7 +30,7 @@
           <label for="avatar" class="font-medium text-[#d2d1d6] mb-1">Upload Avatar</label>
   
           <div
-            class="upload-avatar border-dashed border-2 border-[#8784a4] rounded-md max-md:w-[400px] h-[100px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white">
+            class="upload-avatar border-dashed border-2 border-[#8784a4] rounded-md max-md:w-[400px] lg:w-[405px] h-[100px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white">
             <div class="flex justify-center my-2">
               <div class="bg-indigo-900/50 rounded-full p-2">
                 <img :src="IconUpload" alt="upload" class="w-6 h-6" />
@@ -45,22 +45,26 @@
           <p class="text-gray-400 text-xs text-center">Upload your photo (JPG or PNG, max size: 500KB).</p>
           </div>
         </div>
-  
-  
-        Full Name
-  
-        Email Address
-        example@email.com
-  
-        GitHub Username
-        @yourusername
+        <div class="form-group flex flex-col">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div class="form-group flex flex-col">
+          <label for="name">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" />
+        </div>
+        <div class="form-group flex flex-col">
+          <label for="name">Github Username</label>
+          <input type="text" id="github" name="github" placeholder="@yourusername"/>
+        </div>
+        
   
         Generate My Ticket
   
         <!-- Form ends -->
       </form>
     </div>
-    <div class="generated-token text-white">
+    <div class="generated-token text-white hidden">
       <!-- Generated tickets starts -->
   
       Congrats, <!-- Full Name -->! Your ticket is ready.
