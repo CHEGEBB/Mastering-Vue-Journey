@@ -20,12 +20,12 @@
         <p class="text-[#8784a4]">Secure your spot at next year's biggest coding conference.</p>
       </div>
 
-      <form @submit.prevent="submitForm" class="justify-center items-center flex flex-col">
+      <form @submit.prevent="submitForm" class="justify-center items-center flex flex-col  h-[450px]">
         <div class="form-group">
           <label for="avatar" class="font-medium text-[#d2d1d6] mb-1">Upload Avatar</label>
-          <div class="upload-avatar border-dashed border-2 border-[#8784a4] rounded-md max-md:w-[400px] lg:w-[405px] h-[100px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white">
+          <div class="upload-avatar border-dashed border-[2px] border-[#8784a4] rounded-md max-md:w-[400px] lg:w-[405px] h-[100px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white">
             <div class="flex justify-center my-2">
-              <div class="bg-indigo-900/50 rounded-xl p-2 border-1 border-[#8784a4]">
+              <div class="bg-indigo-900/50 rounded-xl p-2 border-[1px] border-[#8784a4]">
                 <img :src="IconUpload" alt="upload" class="w-6 h-6" />
               </div>
             </div>
@@ -52,7 +52,7 @@
             id="name" 
             v-model="fullName"
             name="name" 
-            class="border-solid border-2 border-[#8784a4] rounded-md max-md:w-[400px] lg:w-[405px] h-[50px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white"
+            class="border-solid border-[1.5px] border-[#8784a4] rounded-[12px] max-md:w-[400px] lg:w-[405px] h-[50px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white"
           />
         </div>
 
@@ -64,7 +64,7 @@
             v-model="email"
             name="email" 
             placeholder="example@email.com" 
-            class="border-solid border-2 border-[#8784a4] rounded-md max-md:w-[400px] lg:w-[405px] h-[50px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white"
+            class="border-solid border-[1.5px] border-[#8784a4] rounded-[12px] max-md:w-[400px] lg:w-[405px] h-[50px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white"
           />
         </div>
 
@@ -76,13 +76,13 @@
             v-model="githubUsername"
             name="github" 
             placeholder="@yourusername" 
-            class="border-solid border-2 border-[#8784a4] rounded-md max-md:w-[400px] lg:w-[405px] h-[50px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white"
+            class="border-solid border-[1.5px] border-[#8784a4] rounded-[12px] max-md:w-[400px] lg:w-[405px] h-[50px] p-6 flex flex-col items-center justify-center space-y-2 bg-[#4b486a]/20 text-white"
           />
         </div>
 
         <button 
           type="submit"
-          class="bg-[#FF6844] hover:bg-[#FF8666] text-white font-bold py-3 px-6 rounded-md mt-6 w-[405px]"
+          class="bg-[#FF6844] hover:bg-[#FF8666] text-white font-bold py-3 px-6 rounded-[12px] mt-6 w-[405px]"
         >
           Generate My Ticket
         </button>
@@ -97,6 +97,10 @@
         <p class="text-[#8784a4] mb-6">
           We've emailed your ticket to {{ email }} and will send updates in the run up to the event.
         </p>
+        <div class="ticket">
+         <img :src="PatternTicket" alt="tickets"/>
+
+        </div>
         <div class="ticket-details">
           <h3 class="text-xl font-bold mb-2">Coding Conf</h3>
           <p class="text-[#8784a4]">Jan 31, 2025 / Austin, TX</p>
