@@ -90,7 +90,7 @@
     </div>
 
     <div :class="['generated-token text-white', !showTicket ? 'hidden' : '']">
-      <div class="ticket-container bg-[#4b486a]/20 p-8 rounded-lg max-w-[600px] mx-auto">
+      <div class="ticket-container max-w-[600px] mx-auto">
         <h2 class="text-2xl font-bold mb-4">
           Congrats, {{ fullName }}! Your ticket is ready.
         </h2>
@@ -98,12 +98,13 @@
           We've emailed your ticket to {{ email }} and will send updates in the run up to the event.
         </p>
         <div class="ticket">
-         <img :src="PatternTicket" alt="tickets"/>
-
+         <img :src="PatternTicket" alt="tickets" class="w-[500px] h-[250px] ml-24 mt-20"/>
         </div>
         <div class="ticket-details">
-          <h3 class="text-xl font-bold mb-2">Coding Conf</h3>
-          <p class="text-[#8784a4]">Jan 31, 2025 / Austin, TX</p>
+          <div class="absolute left-[36%] top-[45%] ">
+            <img :src="LogoFull" alt="logo" class="w-[200px] h-[50px]" />
+          </div>
+          <p class="text-[#8784a4] absolute left-[39.5%] top-[55%] font-semibold">Jan 31, 2025 / Austin, TX</p>
         </div>
       </div>
     </div>
@@ -135,8 +136,8 @@ export default {
       fullName: '',
       email: '',
       githubUsername: '',
-      showTicket: false,
-      showForm:true,
+      showTicket: true,
+      showForm:false,
       DesktopBg,
       MobileBg,
       TabletBg,
