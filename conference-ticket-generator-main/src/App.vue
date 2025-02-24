@@ -100,11 +100,25 @@
         <div class="ticket">
          <img :src="PatternTicket" alt="tickets" class="w-[500px] h-[250px] ml-24 mt-20"/>
         </div>
-        <div class="ticket-details">
-          <div class="absolute left-[36%] top-[45%] ">
+        <div class="ticket-details flex flex-col absolute left-[36.5%] top-[46%] w-[260px]">
+          <div class=" ">
             <img :src="LogoFull" alt="logo" class="w-[200px] h-[50px]" />
           </div>
-          <p class="text-[#8784a4] absolute left-[39.5%] top-[55%] font-semibold">Jan 31, 2025 / Austin, TX</p>
+          <div class="date">
+          <p class="text-[#8784a4] absolute  font-semibold ml-12">Jan 31, 2025 / Austin, TX</p>
+          </div>
+          <div class="user-details absolute top-[100px] flex flex-row">
+            <div class="avatar">
+              <img :src="Avatar" alt="avatar" class="w-[60px] h-[60px] rounded-[12px] mr-4" />
+            </div>
+            <div class="details">
+            <p>{{ fullName }}</p>
+            <div class="github">
+              <img :src="IconGithub" alt="github" class="w-6 h-6 mr-2" />
+              <p>{{ githubUsername }}</p>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -133,9 +147,9 @@ export default {
   data() {
     return {
       avatar: '',
-      fullName: '',
-      email: '',
-      githubUsername: '',
+      fullName: 'Jonat Kristof',
+      email: 'jonatan@email.com',
+      githubUsername: '@jonatankristof0101',
       showTicket: true,
       showForm:false,
       DesktopBg,
