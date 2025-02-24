@@ -91,33 +91,36 @@
 
     <div :class="['generated-token text-white', !showTicket ? 'hidden' : '']">
       <div class="ticket-container max-w-[600px] mx-auto">
-        <h2 class="text-2xl font-bold mb-4">
+        <h2 class="text-4xl font-bold mb-4 ml-[15%] text-center w-[500px] justify-center items-center">
           Congrats, {{ fullName }}! Your ticket is ready.
         </h2>
-        <p class="text-[#8784a4] mb-6">
-          We've emailed your ticket to {{ email }} and will send updates in the run up to the event.
+        <p class="text-[#8784a4] mb-6 ml-[25%] text-center w-[350px] justify-center items-center font-semibold">
+          We've emailed your ticket to <span class="text-[#FF8666]">{{ email }}</span> and will send updates in the run up to the event.
         </p>
         <div class="ticket">
-         <img :src="PatternTicket" alt="tickets" class="w-[500px] h-[250px] ml-24 mt-20"/>
+         <img :src="PatternTicket" alt="tickets" class="w-[500px] h-[250px] ml-24 mt-10"/>
         </div>
-        <div class="ticket-details flex flex-col absolute left-[36.5%] top-[46%] w-[260px]">
+        <div class="ticket-details flex flex-col absolute left-[36.5%] top-[50%] w-[260px]">
           <div class=" ">
             <img :src="LogoFull" alt="logo" class="w-[200px] h-[50px]" />
           </div>
           <div class="date">
           <p class="text-[#8784a4] absolute  font-semibold ml-12">Jan 31, 2025 / Austin, TX</p>
           </div>
-          <div class="user-details absolute top-[100px] flex flex-row">
+          <div class="user-details absolute top-[150px] flex flex-row">
             <div class="avatar">
               <img :src="Avatar" alt="avatar" class="w-[60px] h-[60px] rounded-[12px] mr-4" />
             </div>
-            <div class="details">
+            <div class="details mt-2">
             <p>{{ fullName }}</p>
-            <div class="github">
+            <div class="github flex flex-row">
               <img :src="IconGithub" alt="github" class="w-6 h-6 mr-2" />
               <p>{{ githubUsername }}</p>
             </div>
             </div>
+          </div>
+          <div class="ticket-number absolute top-[90px] left-[420px] rotate-90">
+            <p class="text-[#8784a4] font-semibold">#01609</p>
           </div>
         </div>
       </div>
