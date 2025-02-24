@@ -28,7 +28,7 @@ Each challenge in this repository is designed to be functional, responsive, and 
 ## 5.Challenge 5: coding-bootcamp-testimonials:👉👉( https://coding-bootcamp-testimonials-ten-pied.vercel.app/)
 ![Design preview for the joblisting page coding challenge](./img/test.jpg)
 
-## 6.Challenge 6:conference-ticket-generator-main :👉👉( https://coding-bootcamp-testimonials-ten-pied.vercel.app/)
+## 6.Challenge 6:conference-ticket-generator-main :👉👉( https://conference-ticket-generator-zeta.vercel.app/)
 ![Design preview for the joblisting page coding challenge](./img/desktop-design-ticket.jpg)
 
 
